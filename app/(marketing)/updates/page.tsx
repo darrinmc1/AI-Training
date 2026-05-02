@@ -20,13 +20,25 @@ export default function UpdatesPage() {
             </span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            The latest developments in AI — analyzed, summarized, and made actionable.
+            The latest in AI &mdash; explained like a friend would, not a
+            press release.
           </p>
         </div>
       </div>
 
       {/* List */}
       <div className="mx-auto max-w-3xl px-6 py-16">
+        {ALL_UPDATES.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-12 text-center">
+            <div className="text-5xl mb-4">{siteConfig.theme.emoji}</div>
+            <p className="text-slate-300 font-semibold mb-1">
+              No updates yet &mdash; but the AI world never sleeps.
+            </p>
+            <p className="text-sm text-slate-500">
+              The first deep dive lands soon. We&apos;ll save you a seat.
+            </p>
+          </div>
+        ) : (
         <div className="space-y-6">
           {ALL_UPDATES.map((update) => (
             <Link
@@ -60,6 +72,7 @@ export default function UpdatesPage() {
             </Link>
           ))}
         </div>
+        )}
       </div>
     </div>
   )

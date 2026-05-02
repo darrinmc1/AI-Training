@@ -1,0 +1,13 @@
+import { SignUp } from "@clerk/nextjs"
+
+export const metadata = {
+  title: "Sign Up",
+}
+
+export default function SignUpPage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-cyan-950/40 to-indigo-950/60 px-4 py-16">
+      <SignUp />
+    </div>
+  )
+}

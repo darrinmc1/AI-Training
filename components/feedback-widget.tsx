@@ -41,7 +41,9 @@ export function FeedbackWidget() {
 
       if (res.ok) {
         setStatus("success")
-        setResponseMessage(data.message)
+        setResponseMessage(
+          data.message || "Got it. The team reads every note."
+        )
         setTimeout(() => {
           setIsOpen(false)
           setStatus("idle")
@@ -53,11 +55,15 @@ export function FeedbackWidget() {
         }, 3000)
       } else {
         setStatus("error")
-        setResponseMessage(data.error || "Something went wrong.")
+        setResponseMessage(
+          data.error || "Hmm, that didn't go through. Mind trying again?"
+        )
       }
     } catch {
       setStatus("error")
-      setResponseMessage("Network error. Please try again.")
+      setResponseMessage(
+        "Couldn't reach our end of the wire. Try once more?"
+      )
     }
   }
 
@@ -97,7 +103,9 @@ export function FeedbackWidget() {
               <div className="text-4xl mb-3 animate-bounce">
                 {siteConfig.badges.tierEmojis[4]}
               </div>
-              <p className="font-bold text-white mb-1">Thank you!</p>
+              <p className="font-bold text-white mb-1">
+                Thank you &mdash; you&apos;re a legend.
+              </p>
               <p className="text-sm text-slate-400">{responseMessage}</p>
             </div>
           ) : (
@@ -222,7 +230,7 @@ export function FeedbackWidget() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                       />
                     </svg>
-                    Sending...
+                    Warming up the neurons...
                   </span>
                 ) : (
                   "Send Feedback"

@@ -2,12 +2,19 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import {
+  SignInButton,
+  SignUpButton,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs"
 import { siteConfig } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { isSignedIn, isLoaded } = useUser()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
@@ -36,26 +43,41 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* Auth */}
           <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/login"
-              className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              Log In
-            </Link>
-            <Link
-              href="/signup"
-              className={cn(
-                "px-5 py-2 text-sm font-bold rounded-xl text-white",
-                "bg-gradient-to-r from-cyan-500 to-blue-600",
-                "hover:from-cyan-400 hover:to-blue-500",
-                "shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40",
-                "transition-all duration-300 hover:scale-105"
-              )}
-            >
-              {siteConfig.copy.ctaButton}
-            </Link>
+            {isLoaded && !isSignedIn && (
+              <>
+                <SignInButton mode="modal">
+                  <button className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
+                    Log In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button
+                    className={cn(
+                      "px-5 py-2 text-sm font-bold rounded-xl text-white",
+                      "bg-gradient-to-r from-cyan-500 to-blue-600",
+                      "hover:from-cyan-400 hover:to-blue-500",
+                      "shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40",
+                      "transition-all duration-300 hover:scale-105"
+                    )}
+                  >
+                    {siteConfig.copy.ctaButton}
+                  </button>
+                </SignUpButton>
+              </>
+            )}
+            {isLoaded && isSignedIn && (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                >
+                  Dashboard
+                </Link>
+                <UserButton appearance={{ elements: { avatarBox: "h-9 w-9" } }} />
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -88,18 +110,34 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-4 border-t border-white/10 space-y-2">
-              <Link
-                href="/login"
-                className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white text-center rounded-lg hover:bg-white/5"
-              >
-                Log In
-              </Link>
-              <Link
-                href="/signup"
-                className="block px-4 py-3 text-sm font-bold text-white text-center rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600"
-              >
-                {siteConfig.copy.ctaButton}
-              </Link>
+              {isLoaded && !isSignedIn && (
+                <>
+                  <SignInButton mode="modal">
+                    <button className="block w-full px-4 py-3 text-sm font-medium text-slate-300 hover:text-white text-center rounded-lg hover:bg-white/5">
+                      Log In
+                    </button>
+                  </SignInButton>
+                  <SignUpButton mode="modal">
+                    <button className="block w-full px-4 py-3 text-sm font-bold text-white text-center rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600">
+                      {siteConfig.copy.ctaButton}
+                    </button>
+                  </SignUpButton>
+                </>
+              )}
+              {isLoaded && isSignedIn && (
+                <>
+                  <Link
+                    href="/dashboard"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white text-center rounded-lg hover:bg-white/5"
+                  >
+                    Dashboard
+                  </Link>
+                  <div className="flex justify-center pt-2">
+                    <UserButton />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

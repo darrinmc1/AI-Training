@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --no-install next build)",
+      "Bash(npx --no-install tsc --noEmit)",
+      "Bash(pnpm add *)",
+      "Bash(find node_modules/.pnpm/@clerk+nextjs* -maxdepth 4 -name \"index.d.ts\")",
+      "Bash(xargs grep *)",
+      "Bash(find \"C:/Users/Client/Desktop/Projects/ai training/discover-ai/node_modules/.pnpm/@clerk+types\"* -maxdepth 6 -name \"*.d.ts\")",
+      "Bash(pnpm dev *)",
+      "Bash(curl -sS -o /dev/null -w \"homepage: %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -sS -o /dev/null -w \"sign-in:  %{http_code}\\\\n\" http://localhost:3000/sign-in)",
+      "Bash(curl -sS -o /dev/null -w \"dashboard: %{http_code}\\\\n\" -L --max-redirs 0 http://localhost:3000/dashboard)",
+      "Bash(curl -sS -o /dev/null -w \"free preview lesson: %{http_code}\\\\n\" http://localhost:3000/lessons/what-is-ai)",
+      "Bash(curl -sS -o /dev/null -w \"gated lesson: %{http_code}\\\\n\" http://localhost:3000/lessons/rag-basics)"
+    ]
+  }
+}

@@ -37,6 +37,17 @@ function LevelSection({
         <p className="text-slate-400 text-lg">{description}</p>
       </div>
 
+      {modules.length === 0 ? (
+        <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-10 text-center">
+          <div className="text-4xl mb-3">{emoji}</div>
+          <p className="text-slate-300 font-semibold mb-1">
+            New lessons are still in the oven.
+          </p>
+          <p className="text-sm text-slate-500">
+            The robots are studying hard &mdash; check back soon.
+          </p>
+        </div>
+      ) : (
       <div className="grid gap-6 md:grid-cols-2">
         {modules.map((mod) => (
           <Link
@@ -79,6 +90,7 @@ function LevelSection({
           </Link>
         ))}
       </div>
+      )}
     </section>
   )
 }
@@ -95,8 +107,8 @@ export default function LessonsPage() {
             </span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            {ALL_MODULES.length} lessons across {3} levels. Go from Basic Bot to
-            Superintelligence at your own pace.
+            {ALL_MODULES.length} lessons across 3 levels. Go from Basic Bot to
+            Superintelligence at your own pace &mdash; no rushing, no judging.
           </p>
         </div>
       </div>

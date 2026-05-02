@@ -26,10 +26,10 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            We believe everyone should be able to harness the power of AI
-            &mdash; not just engineers with PhDs. {siteConfig.name} is built
-            to take you from confused to confident, one hands-on lesson at a
-            time.
+            AI shouldn&apos;t be reserved for engineers with PhDs and standing
+            desks. {siteConfig.name} is built to take you from confused to
+            confident, one hands-on lesson at a time &mdash; with zero shame
+            about starting at the start.
           </p>
         </div>
       </section>

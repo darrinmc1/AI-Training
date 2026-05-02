@@ -98,16 +98,24 @@ export function EmailCapture({
 
       if (res.ok) {
         setStatus("success")
-        setMessage(data.message)
+        setMessage(
+          data.message ||
+            "You're in. We'll send something good your way soon."
+        )
         setEmail("")
         setName("")
       } else {
         setStatus("error")
-        setMessage(data.error || "Something went wrong.")
+        setMessage(
+          data.error ||
+            "The robots got distracted. Mind giving that another go?"
+        )
       }
     } catch {
       setStatus("error")
-      setMessage("Network error. Please try again.")
+      setMessage(
+        "Couldn't reach our end of the wire. Try that one more time?"
+      )
     }
   }
 
@@ -123,7 +131,7 @@ export function EmailCapture({
           {siteConfig.theme.emoji}
         </div>
         <h3 className={`text-2xl font-extrabold ${colors.text} mb-2`}>
-          You&apos;re In!
+          You&apos;re in! High five.
         </h3>
         <p className={`${colors.textMuted} text-lg`}>{message}</p>
         <div className="mt-4 inline-flex items-center gap-2 bg-cyan-500/10 rounded-full px-4 py-2 border border-cyan-500/30">
@@ -207,7 +215,7 @@ export function EmailCapture({
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                       />
                     </svg>
-                    Joining...
+                    Asking the robots nicely...
                   </span>
                 ) : (
                   siteConfig.copy.ctaButton
@@ -270,7 +278,7 @@ export function EmailCapture({
             disabled={status === "loading"}
             className={`${colors.primary} ${colors.primaryHover} text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap text-sm`}
           >
-            {status === "loading" ? "Joining..." : "Join Free"}
+            {status === "loading" ? "Booting up..." : "Join Free"}
           </button>
         </form>
       </div>

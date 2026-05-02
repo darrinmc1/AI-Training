@@ -20,13 +20,26 @@ export default function ToolsPage() {
             </span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            Hands-on reviews and deep dives into the tools powering the AI revolution.
+            Hands-on reviews and deep dives into the tools doing the heavy
+            lifting. We test them so you don&apos;t have to.
           </p>
         </div>
       </div>
 
       {/* Grid */}
       <div className="mx-auto max-w-5xl px-6 py-16">
+        {ALL_TOOLS.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-12 text-center">
+            <div className="text-5xl mb-4">{siteConfig.theme.emoji}</div>
+            <p className="text-slate-300 font-semibold mb-1">
+              No tool reviews here yet &mdash; but the testing lab is busy.
+            </p>
+            <p className="text-sm text-slate-500">
+              Pop back soon. We&apos;re putting the latest tools through their
+              paces.
+            </p>
+          </div>
+        ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ALL_TOOLS.map((tool) => (
             <Link
@@ -61,6 +74,7 @@ export default function ToolsPage() {
             </Link>
           ))}
         </div>
+        )}
       </div>
     </div>
   )

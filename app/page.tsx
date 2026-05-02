@@ -3,7 +3,12 @@ import { siteConfig } from "@/lib/site-config"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { EmailCapture } from "@/components/email-capture"
-import { latestUpdates, aiTools, learningPaths } from "@/data/modules"
+import {
+  latestUpdates,
+  aiTools,
+  learningPaths,
+  getModuleById,
+} from "@/data/modules"
 import {
   ArrowRight,
   BookOpen,
@@ -14,7 +19,17 @@ import {
   Award,
 } from "lucide-react"
 
+const FREE_PREVIEW_LESSON_IDS = [
+  "what-is-ai",
+  "ai-fundamentals",
+  "prompt-engineering-101",
+] as const
+
 export default function HomePage() {
+  const freePreviewLessons = FREE_PREVIEW_LESSON_IDS.map((id) =>
+    getModuleById(id)
+  ).filter((m): m is NonNullable<typeof m> => Boolean(m))
+
   return (
     <>
       <Header />
@@ -95,8 +110,8 @@ export default function HomePage() {
                 Latest Updates
               </h2>
               <p className="text-slate-400 mt-3 max-w-lg mx-auto">
-                Stay on top of the AI world with our weekly deep dives and
-                analysis.
+                Fresh from the AI world each week &mdash; the news that matters,
+                minus the hype headache.
               </p>
             </div>
 
@@ -149,8 +164,8 @@ export default function HomePage() {
                 Master the Best AI Tools
               </h2>
               <p className="text-slate-400 mt-3 max-w-lg mx-auto">
-                Hands-on tutorials for the tools that are actually changing how
-                people work.
+                Hands-on tutorials for the tools doing the heavy lifting &mdash;
+                so you can do the fun thinking.
               </p>
             </div>
 
@@ -195,8 +210,8 @@ export default function HomePage() {
                 Choose Your Path
               </h2>
               <p className="text-slate-400 mt-3 max-w-lg mx-auto">
-                Three structured learning tracks from beginner to expert. Pick
-                your level and start building.
+                Three tracks, beginner to expert. Pick where you are today
+                &mdash; not where you think you should be.
               </p>
             </div>
 
@@ -271,6 +286,58 @@ export default function HomePage() {
         </section>
 
         {/* ============================================================
+            FREE PREVIEW SECTION
+            ============================================================ */}
+        <section className="py-20 md:py-28 border-t border-white/5">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-2 mb-4">
+                <span className="text-sm font-semibold text-emerald-400 tracking-wide uppercase">
+                  Free Preview
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white">
+                Try a Few Lessons on Us
+              </h2>
+              <p className="text-slate-400 mt-3 max-w-lg mx-auto">
+                No login, no credit card &mdash; just three lessons to see if
+                we&apos;re your kind of teacher.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {freePreviewLessons.map((lesson) => (
+                <Link
+                  key={lesson.id}
+                  href={`/lessons/${lesson.id}`}
+                  className="glass-card p-6 group transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="inline-block rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 text-xs font-medium text-emerald-400 uppercase tracking-wide">
+                        {lesson.level}
+                      </span>
+                      <span className="text-xs text-slate-500">
+                        {lesson.duration}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      {lesson.title}
+                    </h3>
+                    <p className="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
+                      {lesson.description}
+                    </p>
+                    <span className="text-sm font-semibold text-emerald-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Read free <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================================
             WHY CHOOSE US
             ============================================================ */}
         <section className="py-20 md:py-28 border-t border-white/5">
@@ -331,7 +398,7 @@ export default function HomePage() {
                   icon: Sparkles,
                   title: "No PhD Required",
                   description:
-                    "We explain AI in plain English. If you can use a computer, you can learn AI.",
+                    "We explain AI in plain English. If you can send an email, you can learn this.",
                   color: "text-amber-400",
                   bg: "bg-amber-500/10",
                 },

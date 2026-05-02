@@ -74,7 +74,8 @@ export default function DashboardPage() {
           Welcome back, {mockUser.name} {badge.emoji}
         </h1>
         <p className="text-slate-400 mt-1">
-          Keep going &mdash; you&apos;re evolving nicely.
+          Keep going &mdash; you&apos;re evolving nicely. Future-you is going
+          to be very smug.
         </p>
       </div>
 
