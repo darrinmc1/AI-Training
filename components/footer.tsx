@@ -45,17 +45,18 @@ export function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
                   className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
-                ><li>
-                  <Link
-                   href="/contact"
-                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
-                  >
-                  Contact Us
-                  </Link>
-              </li>
+                >
                   Email Us
                 </a>
               </li>
