@@ -6,7 +6,7 @@ import { Sparkles, Gift, X, Check } from "lucide-react"
 const MAILCHIMP_ACTION_URL =
   "https://gmail.us19.list-manage.com/subscribe/post?u=b8898b94266e53179fa3bc7ff&id=cc2cbb82cb&f_id=001ff7e3f0"
 const HONEYPOT_FIELD_NAME = "b_b8898b94266e53179fa3bc7ff_cc2cbb82cb"
-const POPUP_STORAGE_KEY = "discover-ai-waitlist-seen"
+const POPUP_STORAGE_KEY = "mastertherevolution-waitlist-seen"
 
 const SHOW_AFTER_MS = 5000
 const SUPPRESS_DAYS = 30
@@ -98,14 +98,14 @@ export function WaitlistPopup() {
 
               {/* Header */}
               <h2 className="text-2xl font-extrabold tracking-tight text-white mb-2 font-display">
-                Get <span className="gradient-text-cyan">50% Off</span> Discover AI
+                Get <span className="gradient-text-cyan">50% Off</span> AI Mastery Hub
               </h2>
 
               {/* Description */}
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Join our founding waitlist and lock in early access pricing forever.
-                Learn AI from zero, in plain English. No jargon, no elitism, just highly
-                practical skills.
+                Join our founding members and lock in early access pricing forever.
+                Master the AI revolution in plain English — no jargon, no elitism, just
+                practical skills that actually work.
               </p>
 
               {/* Mailchimp Iframe Target */}
