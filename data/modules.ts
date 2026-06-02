@@ -361,23 +361,18 @@ The easiest win. Take your most common questions and feed them into an AI chatbo
 
 ### Tier 2: AI + Human Handoff
 
-Not every question should be answered by AI. Design a clear escalation path.
+Not every question should be answered by AI. Design a clear escalation path:
 
-```
-Customer Inquiry
-       │
-       ▼
-  AI Chatbot  ─── Can answer? ──► Instant reply
-       │
-       No
-       ▼
-  Smart Ticketing System
-  (categorizes, prioritizes, routes)
-       │
-       ▼
-  Human Support Agent
-  (with AI-drafted response ready)
-```
+Customer Inquiry -> AI Chatbot -> Can answer? -> Instant reply
+                                      |
+                                      No
+                                      v
+                             Smart Ticketing System
+                          (categorizes, prioritizes, routes)
+                                      |
+                                      v
+                             Human Support Agent
+                          (with AI-drafted response ready)
 
 ### Tier 3: Proactive AI Support
 
@@ -444,18 +439,15 @@ Not all data is equally useful. Rank your business data by value:
 Messy data = messy AI results. Run through this checklist:
 
 ### Remove Duplicates
-```csv
-# Before: Duplicate customer entries
-ID, Name, Email, Purchase
-001, John Smith, john@email.com, $50
-001, John Smith, john@email.com, $50  ← Duplicate!
-```
 
-```csv
-# After
-ID, Name, Email, Purchase
-001, John Smith, john@email.com, $50
-```
+Before — duplicate customer entries:
+  ID, Name, Email, Purchase
+  001, John Smith, john@email.com, $50
+  001, John Smith, john@email.com, $50  (duplicate!)
+
+After:
+  ID, Name, Email, Purchase
+  001, John Smith, john@email.com, $50
 
 ### Standardize Formats
 - **Dates**: Make sure every date is `YYYY-MM-DD` (not a mix of "Jan 5, 2026" and "01/05/26")
@@ -472,18 +464,16 @@ ID, Name, Email, Purchase
 AI tools work best with structured data. Here's how to structure common business datasets:
 
 ### Customer Data
-```csv
-customer_id,first_name,last_name,email,purchase_total,lifetime_orders,last_purchase_date,segment
-C001,Maria,Garcia,maria@email.com,2500,12,2026-04-15,high-value
-C002,Alex,Chen,alex@email.com,350,2,2025-11-20,new
-```
+
+  customer_id, first_name, last_name, email, purchase_total, lifetime_orders, last_purchase_date, segment
+  C001, Maria, Garcia, maria@email.com, 2500, 12, 2026-04-15, high-value
+  C002, Alex, Chen, alex@email.com, 350, 2, 2025-11-20, new
 
 ### Product Data
-```csv
-sku,name,category,price,cost,stock_count,is_active
-SKU-1001,Ergonomic Chair,Furniture,349.00,210.00,45,true
-SKU-1002,Desk Lamp,Furniture,79.00,42.00,120,true
-```
+
+  sku, name, category, price, cost, stock_count, is_active
+  SKU-1001, Ergonomic Chair, Furniture, 349.00, 210.00, 45, true
+  SKU-1002, Desk Lamp, Furniture, 79.00, 42.00, 120, true
 
 ## Step 3: Create a Simple Data Pipeline
 
@@ -543,15 +533,11 @@ const contentMarketingWithAI: Module = {
 
 ## The AI Content Marketing Funnel
 
-```
-Research → Outline → Draft → Edit → Optimize → Publish → Analyze
-   │          │         │       │        │          │          │
-   ▼          ▼         ▼       ▼        ▼          ▼          ▼
-   AI        AI +     AI      You +    AI         You        AI
-   Human     Draft    Human
-```
+The best approach is human-led, AI-assisted. You drive the strategy; AI handles the heavy lifting:
 
-The best approach is **human-led, AI-assisted**. You drive the strategy; AI handles the heavy lifting.
+Research -> Outline -> Draft -> Edit -> Optimize -> Publish -> Analyze
+   |            |          |       |         |           |          |
+   AI        AI+Draft     AI     You+AI      AI         You        AI
 
 ## Phase 1: Research with AI
 
@@ -664,26 +650,7 @@ For business workflows, you need predictable, machine-readable output — not fr
 ### Business Use Case: Automating Invoice Data Extraction
 
 **Prompt:**
-> Extract the following information from this invoice and return it as valid JSON:
-> ```json
-> {
->   "invoice_number": "string",
->   "vendor_name": "string",
->   "date": "YYYY-MM-DD",
->   "line_items": [
->     {
->       "description": "string",
->       "quantity": "number",
->       "unit_price": "number",
->       "total": "number"
->     }
->   ],
->   "subtotal": "number",
->   "tax": "number",
->   "total_due": "number"
-> }
-> ```
-> Return ONLY valid JSON. No explanations, no extra text.
+> Extract the following information from this invoice and return it as valid JSON with these fields: invoice_number (string), vendor_name (string), date (YYYY-MM-DD), line_items array (each with description, quantity, unit_price, total), subtotal (number), tax (number), total_due (number). Return ONLY valid JSON. No explanations, no extra text.
 
 **Why this matters**: You can pipe the JSON output directly into QuickBooks, Xero, or a Google Sheet via API. Zero manual data entry.
 
@@ -703,24 +670,25 @@ System prompts are the most powerful lever for production use. They set the rule
 
 ### Template: The Business AI Assistant
 
-```
-You are an AI assistant for [Business Name], a [business type].
-You are helpful, concise, and professional.
+System prompt template:
 
-## Core Rules
-1. Never make up facts. If you don't know, say "I don't have that information."
-2. Always use company-approved terminology.
-3. Prioritize safety: never share customer data.
-4. Stay on brand: professional but warm, never robotic.
+  You are an AI assistant for [Business Name], a [business type].
+  You are helpful, concise, and professional.
 
-## Response Format
-- For questions: Start with a direct answer, then provide context.
-- For requests: Acknowledge first, then deliver the output.
-- For errors: Apologize, explain, and offer an alternative.
+  Core Rules:
+  1. Never make up facts. If you don't know, say "I don't have that information."
+  2. Always use company-approved terminology.
+  3. Prioritize safety: never share customer data.
+  4. Stay on brand: professional but warm, never robotic.
 
-## Knowledge Boundary
-Only answer questions related to [Business Domain]. For off-topic questions, politely redirect: "I'm specialized in helping with [domain]. Can I help you with something related to that?"
-```
+  Response Format:
+  - For questions: Start with a direct answer, then provide context.
+  - For requests: Acknowledge first, then deliver the output.
+  - For errors: Apologize, explain, and offer an alternative.
+
+  Knowledge Boundary:
+  Only answer questions related to [Business Domain]. For off-topic questions,
+  politely redirect: "I'm specialized in helping with [domain]. Can I help you with something related to that?"
 
 ### Pro Tips for System Prompts
 - **Be prescriptive**: Tell the AI what TO do, not just what NOT to do
@@ -738,23 +706,17 @@ For complex analyses, break the task into sequential steps where each step's out
 
 **Multi-step workflow for competitive analysis:**
 
-```
-STEP 1: Gather
+STEP 1 - Gather:
 Prompt: "List the top 5 competitors in [industry] in [region]"
-Output: [List of competitors]
+Output: List of competitors
 
-STEP 2: Compare
-Prompt: "For each competitor above, create a table comparing:
-- Pricing model
-- Target customer
-- Key differentiator
-- Customer rating"
-Output: [Comparison table]
+STEP 2 - Compare:
+Prompt: "For each competitor above, create a table comparing pricing model, target customer, key differentiator, and customer rating."
+Output: Comparison table
 
-STEP 3: Analyze
+STEP 3 - Analyze:
 Prompt: "Based on this comparison, identify 3 gaps in the market that [Your Business] can exploit. Suggest specific strategies."
-Output: [Strategic recommendations]
-```
+Output: Strategic recommendations
 
 Each step narrows the focus and builds on the previous — dramatically improving output quality.
 
@@ -777,27 +739,26 @@ This creates a **feedback loop** that produces much higher quality output than a
 Instead of describing what you want, show the AI examples. This is the most reliable way to get consistent output.
 
 **Template:**
-```
-You are an email classification assistant. For each email, classify it and return the category and priority.
 
-Example 1:
-Email: "I'd like to return order #12345, the shoes don't fit."
-Category: Returns
-Priority: Medium
+  You are an email classification assistant. For each email, classify it and return the category and priority.
 
-Example 2:
-Email: "Your product saved me hours! Here's a testimonial you can use."
-Category: Testimonial
-Priority: Low
+  Example 1:
+  Email: "I'd like to return order #12345, the shoes don't fit."
+  Category: Returns
+  Priority: Medium
 
-Example 3:
-Email: "I've been charged twice for my subscription. Fix this immediately."
-Category: Billing Issue
-Priority: High
+  Example 2:
+  Email: "Your product saved me hours! Here's a testimonial you can use."
+  Category: Testimonial
+  Priority: Low
 
-Now classify this email:
-Email: "[actual email content]"
-```
+  Example 3:
+  Email: "I've been charged twice for my subscription. Fix this immediately."
+  Category: Billing Issue
+  Priority: High
+
+  Now classify this email:
+  Email: "[actual email content]"
 
 ## Real-World Workflow: The Customer Email Pipeline
 
