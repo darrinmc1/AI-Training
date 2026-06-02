@@ -94,7 +94,7 @@ export default function BadgesDashboardPage() {
     return combined
   }, [activeTab, unlockedBadges, evolutionTiers, topicBadgesList, specialBadgesList])
 
-  const getRarityStyle = (rarity?: "common" | "rare" | "epic" | "legendary") => {
+  const getRarityStyle = (rarity?: "common" | "rare" | "epic" | "legendary" | "mythic") => {
     if (!rarity) return "text-slate-400 border-white/5 bg-white/5"
     switch (rarity) {
       case "common":
@@ -105,6 +105,8 @@ export default function BadgesDashboardPage() {
         return "text-indigo-400 border-indigo-500/20 bg-indigo-500/5"
       case "legendary":
         return "text-amber-400 border-amber-500/20 bg-amber-500/5 animate-pulse"
+      case "mythic":
+        return "text-fuchsia-400 border-fuchsia-500/20 bg-fuchsia-500/5 animate-pulse"
     }
   }
 

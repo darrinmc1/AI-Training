@@ -43,73 +43,141 @@ export default function HomePage() {
             ============================================================ */}
         <section className="relative hero-gradient hero-glow overflow-hidden">
           <div className="grid-pattern absolute inset-0" />
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-36 text-center">
-            <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 mb-8 animate-pulse-glow">
-              <span className="text-lg">{siteConfig.theme.emoji}</span>
-              <span className="text-sm font-semibold text-cyan-400 tracking-wide uppercase">
-                From {siteConfig.badges.tierNames[0]} to{" "}
-                {siteConfig.badges.tierNames[4]}
-              </span>
-            </div>
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 mb-8 animate-pulse-glow">
+                  <span className="text-lg">{siteConfig.theme.emoji}</span>
+                  <span className="text-sm font-semibold text-cyan-400 tracking-wide uppercase">
+                    From {siteConfig.badges.tierNames[0]} to{" "}
+                    {siteConfig.badges.tierNames[4]}
+                  </span>
+                </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold font-display leading-tight mb-6">
-              <span className="text-white">Master the</span>
-              <br />
-              <span className="gradient-text">AI Revolution</span>
-            </h1>
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold font-display leading-[0.95] mb-6">
+                  <span className="text-white">Master the</span>
+                  <br />
+                  <span className="gradient-text">AI Revolution</span>
+                </h1>
 
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              {siteConfig.copy.heroSubtitle}
-            </p>
+                <p className="text-lg md:text-xl text-slate-400 max-w-2xl lg:mx-0 mx-auto mb-10 leading-relaxed">
+                  {siteConfig.copy.heroSubtitle}
+                </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/sign-up"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105 text-lg btn-glow"
-              >
-                {siteConfig.copy.ctaButton}
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-              <Link
-                href="/lessons"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-slate-300 border-2 border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5 transition-all duration-300 text-lg"
-              >
-                {siteConfig.copy.ctaSecondary}
-              </Link>
-            </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Link
+                    href="/sign-up"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105 text-lg btn-glow"
+                  >
+                    {siteConfig.copy.ctaButton}
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                  <Link
+                    href="/lessons"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-slate-300 border-2 border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5 transition-all duration-300 text-lg"
+                  >
+                    {siteConfig.copy.ctaSecondary}
+                  </Link>
+                </div>
 
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
-              <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-cyan-500" />
-                <span>1,200+ learners</span>
+                <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-500">
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4 text-cyan-500" />
+                    <span>1,200+ learners</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="h-4 w-4 text-blue-500" />
+                    <span>50+ lessons</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Award className="h-4 w-4 text-indigo-500" />
+                    <span>5-tier badge system</span>
+                  </div>
+                </div>
+
+                <div className="mt-10 grid gap-3 sm:grid-cols-3 max-w-2xl lg:max-w-none">
+                  {[
+                    { icon: Zap, label: "Active XP", value: "+240 today" },
+                    { icon: Clock, label: "Time Saved", value: "3.8 hrs/week" },
+                    { icon: Star, label: "Prompt Wins", value: "94% cleaner outputs" },
+                  ].map((item, index) => (
+                    <div
+                      key={item.label}
+                      className={`rounded-2xl border border-white/10 bg-slate-900/45 px-4 py-3 backdrop-blur-xl ${index === 1 ? "animate-drift" : "animate-drift-reverse"}`}
+                    >
+                      <div className="flex items-center gap-2 text-cyan-300 mb-1">
+                        <item.icon className="h-4 w-4" />
+                        <span className="text-xs uppercase tracking-[0.18em] text-slate-500">{item.label}</span>
+                      </div>
+                      <p className="text-sm font-bold text-white">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <BookOpen className="h-4 w-4 text-blue-500" />
-                <span>50+ lessons</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="h-4 w-4 text-indigo-500" />
-                <span>5-tier badge system</span>
-              </div>
-            </div>
 
-            <div className="mt-14 mx-auto max-w-3xl">
-              <div className="relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-slate-900/50">
-                <Image
-                  src="/images/hero-ai-chaos.svg"
-                  alt="A friendly robot balancing coffee, prompts, and sticky notes while learning AI"
-                  width={1200}
-                  height={700}
-                  className="w-full h-auto"
-                  priority
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent p-4 text-left">
-                  <p className="text-sm text-cyan-300 font-semibold">
-                    Real learning vibe:
-                  </p>
-                  <p className="text-xs text-slate-300">
-                    10 tabs open, one strong coffee, and suddenly prompts start making sense.
-                  </p>
+              <div className="relative mx-auto w-full max-w-2xl lg:max-w-none">
+                <div className="hero-orb absolute -left-10 top-10 h-28 w-28 bg-cyan-500/15 animate-drift" />
+                <div className="hero-orb absolute -right-6 bottom-10 h-36 w-36 bg-indigo-500/15 animate-drift-reverse" />
+
+                <div className="relative hero-panel-glow animate-float-slow">
+                  <div className="relative overflow-hidden rounded-[28px] border border-cyan-500/20 bg-slate-900/55 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl">
+                    <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between border-b border-white/10 bg-slate-950/60 px-4 py-3 backdrop-blur-xl">
+                      <div className="flex items-center gap-2 text-xs text-slate-400">
+                        <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                      </div>
+                      <span className="text-[11px] uppercase tracking-[0.22em] text-cyan-300">AI Command Deck</span>
+                    </div>
+
+                    <Image
+                      src="/images/hero-ai-chaos.svg"
+                      alt="A friendly robot balancing coffee, prompts, and sticky notes while learning AI"
+                      width={1200}
+                      height={700}
+                      className="w-full h-auto pt-11 animate-zoom-slow"
+                      priority
+                    />
+
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent p-5 text-left">
+                      <p className="text-sm text-cyan-300 font-semibold">
+                        Real learning vibe:
+                      </p>
+                      <p className="text-xs text-slate-300">
+                        10 tabs open, one strong coffee, and suddenly prompts start making sense.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="absolute -left-5 top-20 hidden sm:block animate-float-delayed">
+                    <div className="rounded-2xl border border-cyan-500/20 bg-slate-950/75 px-4 py-3 shadow-xl shadow-cyan-950/30 backdrop-blur-xl">
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">Learning streak</p>
+                      <p className="mt-1 flex items-center gap-2 text-sm font-bold text-white">
+                        <Zap className="h-4 w-4 text-cyan-400" /> 21 days of good decisions
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="absolute -right-4 top-40 hidden md:block animate-drift">
+                    <div className="rounded-2xl border border-indigo-500/20 bg-slate-950/75 px-4 py-3 shadow-xl shadow-indigo-950/30 backdrop-blur-xl">
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">Output quality</p>
+                      <p className="mt-1 flex items-center gap-2 text-sm font-bold text-white">
+                        <Star className="h-4 w-4 text-amber-300" /> Fewer hallucinations, more shipping
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-6 left-6 hidden md:block animate-float-slow">
+                    <div className="rounded-2xl border border-white/10 bg-slate-950/78 px-4 py-3 shadow-xl shadow-slate-950/40 backdrop-blur-xl">
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">Badges earned</p>
+                      <div className="mt-2 flex items-center gap-2 text-lg">
+                        <span>🤖</span>
+                        <span>🧠</span>
+                        <span>⚡</span>
+                        <span className="text-xs text-cyan-300">and one suspiciously smug robot</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

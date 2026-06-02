@@ -1,30 +1,36 @@
 // lib/supabase.ts — optional Supabase client
-// Only used for feedback storage. The package is optional — if not installed,
-// all routes gracefully skip DB writes and still send email notifications.
-
-let createClient: ((url: string, key: string, opts?: object) => object) | null = null
-
-try {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  createClient = require("@supabase/supabase-js").createClient
-} catch {
-  // Package not installed — DB writes will be skipped
-}
+// Only used for feedback storage in app/api/feedback/route.ts
+// If @supabase/supabase-js is not installed, all DB writes are skipped gracefully
+// and the feedback route still sends email notifications via Resend.
+//
+// To enable DB storage: pnpm add @supabase/supabase-js
+// Then add to Vercel env vars:
+//   NEXT_PUBLIC_SUPABASE_URL
+//   SUPABASE_SERVICE_ROLE_KEY
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-if (!url || !serviceKey) {
-  console.warn(
-    "[supabase] NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY not set — DB writes disabled."
-  )
+// Minimal type so consumers don't need to import supabase types
+type SupabaseClient = {
+  from: (table: string) => {
+    insert: (data: object) => Promise<{ error: object | null }>
+  }
 }
 
-export const supabaseAdmin =
-  url && serviceKey && createClient
-    ? (createClient(url, serviceKey, {
-        auth: { persistSession: false, autoRefreshToken: false },
-      }) as { from: (table: string) => { insert: (data: object) => Promise<{ error: object | null }> } })
-    : null
+function createSupabaseClient(): SupabaseClient | null {
+  if (!url || !serviceKey) return null
+  try {
+    // Dynamic require avoids a hard build-time dependency
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { createClient } = require("@supabase/supabase-js")
+    return createClient(url, serviceKey, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    }) as SupabaseClient
+  } catch {
+    return null
+  }
+}
 
+export const supabaseAdmin: SupabaseClient | null = createSupabaseClient()
 export const hasSupabase = () => supabaseAdmin !== null
