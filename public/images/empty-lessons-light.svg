@@ -1,0 +1,30 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#0A1829"/>
+  <rect x="1" y="1" width="638" height="358" stroke="#1F3B59"/>
+
+  <circle cx="102" cy="86" r="26" fill="#22D3EE" fill-opacity="0.2"/>
+  <circle cx="542" cy="74" r="34" fill="#6366F1" fill-opacity="0.2"/>
+
+  <rect x="76" y="250" width="488" height="72" rx="14" fill="#0E2238"/>
+  <rect x="76" y="250" width="488" height="72" rx="14" stroke="#294866"/>
+
+  <rect x="246" y="128" width="148" height="130" rx="24" fill="#0EA5E9"/>
+  <rect x="256" y="138" width="128" height="112" rx="18" fill="#E2E8F0"/>
+  <circle cx="292" cy="181" r="12" fill="#0F172A"/>
+  <circle cx="348" cy="181" r="12" fill="#0F172A"/>
+  <rect x="289" y="212" width="60" height="9" rx="4.5" fill="#0F172A"/>
+
+  <rect x="170" y="155" width="64" height="16" rx="8" fill="#22D3EE"/>
+  <rect x="406" y="162" width="64" height="16" rx="8" fill="#22D3EE"/>
+
+  <rect x="116" y="104" width="120" height="88" rx="14" fill="#111827" stroke="#334155"/>
+  <text x="132" y="137" fill="#A5F3FC" font-size="18" font-family="Verdana, sans-serif">Lesson Plan</text>
+  <text x="132" y="165" fill="#CBD5E1" font-size="14" font-family="Verdana, sans-serif">baking...</text>
+
+  <rect x="426" y="102" width="102" height="76" rx="14" fill="#1E293B" stroke="#334155"/>
+  <path d="M447 132L470 146L447 160V132Z" fill="#67E8F9"/>
+  <rect x="478" y="128" width="31" height="7" rx="3.5" fill="#94A3B8"/>
+  <rect x="478" y="143" width="23" height="7" rx="3.5" fill="#94A3B8"/>
+
+  <text x="162" y="298" fill="#94A3B8" font-size="18" font-family="Verdana, sans-serif">Lessons are in the oven. Robot chef requests 3 more minutes.</text>
+</svg>

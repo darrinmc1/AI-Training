@@ -2,8 +2,10 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { siteConfig } from "@/lib/site-config"
+import { siteConfig, getBadgeDisplay } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
+import { useUser, SignOutButton } from "@clerk/nextjs"
+import { useBadgeStore } from "@/lib/badge-store"
 import {
   LayoutDashboard,
   BookOpen,
@@ -15,7 +17,7 @@ import {
   X,
   LogOut,
 } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const iconMap: Record<string, React.ElementType> = {
   LayoutDashboard,
@@ -33,9 +35,18 @@ export default function DashboardLayout({
 }) {
   const pathname = usePathname()
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const { user, isLoaded } = useUser()
+
+  // Track total XP from zustand badge store
+  const totalXP = useBadgeStore((state) => state.totalXP)
+  const [badge, setBadge] = useState(() => getBadgeDisplay(siteConfig, 0))
+
+  useEffect(() => {
+    setBadge(getBadgeDisplay(siteConfig, totalXP))
+  }, [totalXP])
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen overflow-hidden bg-slate-950 text-slate-100">
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
@@ -89,16 +100,18 @@ export default function DashboardLayout({
                   <Icon className="h-4 w-4 flex-shrink-0" />
                   {link.label}
                 </Link>
-              )
+              );
             })}
           </nav>
 
           {/* Bottom section */}
           <div className="px-3 py-4 border-t border-white/10">
-            <button className="flex w-full items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all">
-              <LogOut className="h-4 w-4" />
-              Sign Out
-            </button>
+            <SignOutButton redirectUrl="/">
+              <button className="flex w-full items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-red-400 hover:bg-red-500/10 transition-all duration-200">
+                <LogOut className="h-4 w-4" />
+                Sign Out
+              </button>
+            </SignOutButton>
           </div>
         </div>
       </aside>
@@ -117,18 +130,31 @@ export default function DashboardLayout({
           <div className="flex-1" />
 
           {/* User area */}
-          <div className="flex items-center gap-3">
-            <div className="text-right hidden sm:block">
-              <p className="text-sm font-medium text-white">AI Learner</p>
-              <p className="text-xs text-slate-500">
-                {siteConfig.badges.tierEmojis[0]}{" "}
-                {siteConfig.badges.tierNames[0]}
-              </p>
+          {isLoaded && (
+            <div className="flex items-center gap-3">
+              <div className="text-right hidden sm:block">
+                <p className="text-sm font-medium text-white">
+                  {user?.firstName || user?.username || "AI Learner"}
+                </p>
+                <p className="text-xs text-cyan-400 flex items-center gap-1 justify-end font-semibold">
+                  <span className="text-sm">{badge.emoji}</span>
+                  {badge.name}
+                </p>
+              </div>
+
+              {user?.imageUrl ? (
+                <img
+                  src={user.imageUrl}
+                  alt={user?.firstName || "User avatar"}
+                  className="h-9 w-9 rounded-full border border-cyan-500/30 object-cover"
+                />
+              ) : (
+                <div className="h-9 w-9 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center text-sm font-bold text-white shadow-lg">
+                  {(user?.firstName || "A")[0].toUpperCase()}
+                </div>
+              )}
             </div>
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center text-sm font-bold text-white">
-              A
-            </div>
-          </div>
+          )}
         </header>
 
         {/* Page content */}

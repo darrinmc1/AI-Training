@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { siteConfig } from "@/lib/site-config"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -9,6 +10,7 @@ import {
   learningPaths,
   getModuleById,
 } from "@/data/modules"
+import { GamificationTeaser } from "@/components/gamification-teaser"
 import {
   ArrowRight,
   BookOpen,
@@ -17,6 +19,8 @@ import {
   Zap,
   Users,
   Award,
+  Clock,
+  Star,
 } from "lucide-react"
 
 const FREE_PREVIEW_LESSON_IDS = [
@@ -40,7 +44,6 @@ export default function HomePage() {
         <section className="relative hero-gradient hero-glow overflow-hidden">
           <div className="grid-pattern absolute inset-0" />
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-36 text-center">
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 mb-8 animate-pulse-glow">
               <span className="text-lg">{siteConfig.theme.emoji}</span>
               <span className="text-sm font-semibold text-cyan-400 tracking-wide uppercase">
@@ -49,7 +52,6 @@ export default function HomePage() {
               </span>
             </div>
 
-            {/* Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold font-display leading-tight mb-6">
               <span className="text-white">Master the</span>
               <br />
@@ -60,10 +62,9 @@ export default function HomePage() {
               {siteConfig.copy.heroSubtitle}
             </p>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/signup"
+                href="/sign-up"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105 text-lg btn-glow"
               >
                 {siteConfig.copy.ctaButton}
@@ -77,7 +78,6 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Social proof */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-cyan-500" />
@@ -90,6 +90,27 @@ export default function HomePage() {
               <div className="flex items-center gap-2">
                 <Award className="h-4 w-4 text-indigo-500" />
                 <span>5-tier badge system</span>
+              </div>
+            </div>
+
+            <div className="mt-14 mx-auto max-w-3xl">
+              <div className="relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-slate-900/50">
+                <Image
+                  src="/images/hero-ai-chaos.svg"
+                  alt="A friendly robot balancing coffee, prompts, and sticky notes while learning AI"
+                  width={1200}
+                  height={700}
+                  className="w-full h-auto"
+                  priority
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent p-4 text-left">
+                  <p className="text-sm text-cyan-300 font-semibold">
+                    Real learning vibe:
+                  </p>
+                  <p className="text-xs text-slate-300">
+                    10 tabs open, one strong coffee, and suddenly prompts start making sense.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -117,10 +138,22 @@ export default function HomePage() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {latestUpdates.map((update) => (
-                <article
+                <Link
                   key={update.id}
-                  className="glass-card p-6 group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+                  href={`/updates/${update.id}`}
+                  className="glass-card p-6 group transition-all duration-300 hover:-translate-y-1"
                 >
+                  <div className="pointer-events-none absolute right-2 top-2 opacity-60 group-hover:opacity-90 transition-opacity z-20">
+                    <Image
+                      src="/images/update-card-doodle.svg"
+                      alt=""
+                      width={48}
+                      height={48}
+                      className="h-10 w-10"
+                      aria-hidden
+                    />
+                  </div>
+
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-3xl">{update.emoji}</span>
@@ -135,16 +168,23 @@ export default function HomePage() {
                       {update.description}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-600">
-                        {update.date}
-                      </span>
+                      <span className="text-xs text-slate-600">{update.date}</span>
                       <span className="text-xs text-cyan-400 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                         Read More <ArrowRight className="h-3 w-3" />
                       </span>
                     </div>
                   </div>
-                </article>
+                </Link>
               ))}
+            </div>
+
+            <div className="text-center mt-10">
+              <Link
+                href="/updates"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-rose-400 hover:text-rose-300 transition-colors"
+              >
+                View all updates <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -171,9 +211,10 @@ export default function HomePage() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {aiTools.map((tool) => (
-                <div
+                <Link
                   key={tool.id}
-                  className="glass-card p-6 group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+                  href={`/tools/${tool.id}`}
+                  className="glass-card p-6 group transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="relative z-10">
                     <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -188,9 +229,23 @@ export default function HomePage() {
                     <p className="text-sm text-slate-400 leading-relaxed">
                       {tool.description}
                     </p>
+                    <div className="mt-4 pt-4 border-t border-white/5">
+                      <span className="text-sm font-semibold text-amber-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+                        View profile <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
+            </div>
+
+            <div className="text-center mt-10">
+              <Link
+                href="/tools"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+              >
+                Browse all tools <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -230,36 +285,27 @@ export default function HomePage() {
                   intermediate: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
                   advanced: "text-indigo-400 bg-indigo-500/10 border-indigo-500/20",
                 }
-
                 return (
-                  <div
+                  <Link
                     key={path.id}
-                    className="glass-card p-6 group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+                    href={`/lessons?level=${path.level}`}
+                    className="glass-card p-6 group transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="relative z-10">
                       <div
-                        className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${
-                          levelColors[path.level]
-                        } flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                        className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${levelColors[path.level]} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                       >
                         <span className="text-4xl">{path.emoji}</span>
                       </div>
-
-                      <span
-                        className={`text-xs font-semibold border rounded-full px-3 py-1 ${
-                          levelAccent[path.level]
-                        }`}
-                      >
+                      <span className={`text-xs font-semibold border rounded-full px-3 py-1 ${levelAccent[path.level]}`}>
                         {category?.name || path.level}
                       </span>
-
                       <h3 className="text-xl font-bold text-white mt-3 mb-2 group-hover:text-cyan-400 transition-colors">
                         {path.title}
                       </h3>
                       <p className="text-sm text-slate-400 leading-relaxed mb-4">
                         {path.description}
                       </p>
-
                       <div className="flex items-center gap-4 text-xs text-slate-500">
                         <div className="flex items-center gap-1">
                           <BookOpen className="h-3.5 w-3.5" />
@@ -270,15 +316,13 @@ export default function HomePage() {
                           {path.duration}
                         </div>
                       </div>
-
                       <div className="mt-4 pt-4 border-t border-white/5">
                         <span className="text-sm font-semibold text-cyan-400 flex items-center gap-1 group-hover:gap-2 transition-all">
-                          Start Learning{" "}
-                          <ArrowRight className="h-4 w-4" />
+                          Start Learning <ArrowRight className="h-4 w-4" />
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 )
               })}
             </div>
@@ -293,49 +337,78 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-2 mb-4">
                 <span className="text-sm font-semibold text-emerald-400 tracking-wide uppercase">
-                  Free Preview
+                  Free — No Account Needed
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white">
-                Try a Few Lessons on Us
+                Try Before You Subscribe
               </h2>
               <p className="text-slate-400 mt-3 max-w-lg mx-auto">
-                No login, no credit card &mdash; just three lessons to see if
-                we&apos;re your kind of teacher.
+                Three full lessons, completely free. No login, no credit card.
+                Just dive in and see if we&apos;re your kind of teacher.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {freePreviewLessons.map((lesson) => (
+            <div className="grid md:grid-cols-3 gap-7 mb-10">
+              {freePreviewLessons.map((lesson, i) => (
                 <Link
                   key={lesson.id}
                   href={`/lessons/${lesson.id}`}
-                  className="glass-card p-6 group transition-all duration-300 hover:-translate-y-1"
+                  className="glass-card p-7 group transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 >
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="inline-block rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 text-xs font-medium text-emerald-400 uppercase tracking-wide">
-                        {lesson.level}
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-extrabold text-emerald-400">
+                        {i + 1}
                       </span>
-                      <span className="text-xs text-slate-500">
-                        {lesson.duration}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-slate-500 flex items-center gap-1">
+                          <Clock className="h-3 w-3" />{lesson.duration}
+                        </span>
+                        <span className="inline-block rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 text-xs font-medium text-emerald-400 uppercase tracking-wide">
+                          Free
+                        </span>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-lg font-extrabold font-display text-white mb-2 group-hover:text-cyan-400 transition-colors leading-snug">
                       {lesson.title}
                     </h3>
-                    <p className="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-sm text-slate-400 leading-relaxed mb-5 flex-1">
                       {lesson.description}
                     </p>
-                    <span className="text-sm font-semibold text-emerald-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {lesson.learningOutcomes && lesson.learningOutcomes.length > 0 && (
+                      <ul className="space-y-1.5 mb-5">
+                        {lesson.learningOutcomes.slice(0, 2).map((outcome) => (
+                          <li key={outcome} className="flex items-start gap-2 text-xs text-slate-400">
+                            <Star className="h-3 w-3 text-emerald-400 mt-0.5 shrink-0" />
+                            {outcome}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    <span className="text-sm font-bold text-emerald-400 flex items-center gap-1.5 group-hover:gap-2.5 transition-all mt-auto">
                       Read free <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
                 </Link>
               ))}
             </div>
+
+            <div className="text-center">
+              <Link
+                href="/free"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+              >
+                View free lessons page <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
+
+        {/* ============================================================
+            GAMIFICATION TEASER
+            ============================================================ */}
+        <GamificationTeaser />
 
         {/* ============================================================
             WHY CHOOSE US
@@ -347,78 +420,26 @@ export default function HomePage() {
                 Why {siteConfig.name}?
               </h2>
               <p className="text-slate-400 mt-3 max-w-lg mx-auto">
-                We&apos;re not just another AI course. Here&apos;s what makes us
-                different.
+                We&apos;re not just another AI course. Here&apos;s what makes us different.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                {
-                  icon: Zap,
-                  title: "Hands-On Learning",
-                  description:
-                    "Every lesson includes practical exercises. You learn by doing, not just watching.",
-                  color: "text-cyan-400",
-                  bg: "bg-cyan-500/10",
-                },
-                {
-                  icon: Award,
-                  title: "Gamified Progression",
-                  description:
-                    "Earn XP, unlock badges, and evolve through 5 tiers. Learning should be fun.",
-                  color: "text-indigo-400",
-                  bg: "bg-indigo-500/10",
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Always Current",
-                  description:
-                    "AI moves fast. We update weekly so you never fall behind the curve.",
-                  color: "text-blue-400",
-                  bg: "bg-blue-500/10",
-                },
-                {
-                  icon: Users,
-                  title: "Community Driven",
-                  description:
-                    "Join fellow learners, share projects, and get feedback from the community.",
-                  color: "text-violet-400",
-                  bg: "bg-violet-500/10",
-                },
-                {
-                  icon: BookOpen,
-                  title: "Structured Paths",
-                  description:
-                    "Clear learning tracks from beginner to advanced. No wondering what to learn next.",
-                  color: "text-emerald-400",
-                  bg: "bg-emerald-500/10",
-                },
-                {
-                  icon: Sparkles,
-                  title: "No PhD Required",
-                  description:
-                    "We explain AI in plain English. If you can send an email, you can learn this.",
-                  color: "text-amber-400",
-                  bg: "bg-amber-500/10",
-                },
+                { icon: Zap, title: "Hands-On Learning", description: "Every lesson includes practical exercises. You learn by doing, not just watching.", color: "text-cyan-400", bg: "bg-cyan-500/10" },
+                { icon: Award, title: "Gamified Progression", description: "Earn XP, unlock badges, and evolve through 5 tiers. Learning should be fun.", color: "text-indigo-400", bg: "bg-indigo-500/10" },
+                { icon: TrendingUp, title: "Always Current", description: "AI moves fast. We update weekly so you never fall behind the curve.", color: "text-blue-400", bg: "bg-blue-500/10" },
+                { icon: Users, title: "Community Driven", description: "Join fellow learners, share projects, and get feedback from the community.", color: "text-violet-400", bg: "bg-violet-500/10" },
+                { icon: BookOpen, title: "Structured Paths", description: "Clear learning tracks from beginner to advanced. No wondering what to learn next.", color: "text-emerald-400", bg: "bg-emerald-500/10" },
+                { icon: Sparkles, title: "No PhD Required", description: "We explain AI in plain English. If you can send an email, you can learn this.", color: "text-amber-400", bg: "bg-amber-500/10" },
               ].map((feature) => (
-                <div
-                  key={feature.title}
-                  className="glass-card p-6 transition-all duration-300 hover:-translate-y-1"
-                >
+                <div key={feature.title} className="glass-card p-6 transition-all duration-300 hover:-translate-y-1">
                   <div className="relative z-10">
-                    <div
-                      className={`h-12 w-12 rounded-xl ${feature.bg} flex items-center justify-center mb-4`}
-                    >
+                    <div className={`h-12 w-12 rounded-xl ${feature.bg} flex items-center justify-center mb-4`}>
                       <feature.icon className={`h-6 w-6 ${feature.color}`} />
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">
-                      {feature.description}
-                    </p>
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-sm text-slate-400 leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}

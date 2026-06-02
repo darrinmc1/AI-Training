@@ -954,10 +954,10 @@ While time-savings is the most common metric, it can be misleading if that time 
 **The Goal**: Establish a cross-functional team to evaluate and approve AI projects.
 
 **The Structure**:
-- **CEO/COO**: For strategic alignment.
-- **CTO**: For technical feasibility and data security.
-- **Head of Legal**: For compliance and ethical oversight.
-- **Department Leads**: To ensure the AI actually solves real-world pain points.`,
+- CEO/COO: For strategic alignment.
+- CTO: For technical feasibility and data security.
+- Head of Legal: For compliance and ethical oversight.
+- Department Leads: To ensure the AI actually solves real-world pain points.`,
   duration: "20 min",
   durationMinutes: 20,
   learningOutcomes: [

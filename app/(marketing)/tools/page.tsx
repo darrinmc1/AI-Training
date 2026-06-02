@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ALL_TOOLS } from "@/data/tools"
 import { siteConfig } from "@/lib/site-config"
 
@@ -30,6 +31,15 @@ export default function ToolsPage() {
       <div className="mx-auto max-w-5xl px-6 py-16">
         {ALL_TOOLS.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-12 text-center">
+            <div className="mx-auto mb-5 max-w-xs overflow-hidden rounded-xl border border-cyan-500/15 bg-slate-900/40">
+              <Image
+                src="/images/empty-tools-light.svg"
+                alt="A tiny lab setup where robots compare AI tools with clipboards"
+                width={640}
+                height={360}
+                className="w-full h-auto"
+              />
+            </div>
             <div className="text-5xl mb-4">{siteConfig.theme.emoji}</div>
             <p className="text-slate-300 font-semibold mb-1">
               No tool reviews here yet &mdash; but the testing lab is busy.
@@ -47,6 +57,17 @@ export default function ToolsPage() {
               href={`/tools/${tool.id}`}
               className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-6 transition-all hover:bg-white/10 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/5"
             >
+              <div className="pointer-events-none absolute right-2 top-2 opacity-60 group-hover:opacity-90 transition-opacity">
+                <Image
+                  src="/images/update-card-doodle.svg"
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="h-10 w-10"
+                  aria-hidden
+                />
+              </div>
+
               <div className="text-4xl mb-4">{tool.emoji}</div>
 
               <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-300 transition-colors">

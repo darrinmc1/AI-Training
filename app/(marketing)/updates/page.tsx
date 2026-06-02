@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ALL_UPDATES } from "@/data/updates"
 import { siteConfig } from "@/lib/site-config"
 
@@ -30,6 +31,15 @@ export default function UpdatesPage() {
       <div className="mx-auto max-w-3xl px-6 py-16">
         {ALL_UPDATES.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-12 text-center">
+            <div className="mx-auto mb-5 max-w-xs overflow-hidden rounded-xl border border-cyan-500/15 bg-slate-900/40">
+              <Image
+                src="/images/empty-lessons-light.svg"
+                alt="A news robot waiting for enough updates to publish a dramatic newsletter"
+                width={640}
+                height={360}
+                className="w-full h-auto"
+              />
+            </div>
             <div className="text-5xl mb-4">{siteConfig.theme.emoji}</div>
             <p className="text-slate-300 font-semibold mb-1">
               No updates yet &mdash; but the AI world never sleeps.
@@ -46,6 +56,17 @@ export default function UpdatesPage() {
               href={`/updates/${update.id}`}
               className="group block rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-6 transition-all hover:bg-white/10 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/5"
             >
+              <div className="pointer-events-none float-right -mt-1 opacity-60 group-hover:opacity-90 transition-opacity">
+                <Image
+                  src="/images/update-card-doodle.svg"
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="h-10 w-10"
+                  aria-hidden
+                />
+              </div>
+
               <div className="flex items-center gap-3 mb-3">
                 <span className="inline-block rounded-full bg-rose-500/10 border border-rose-500/20 px-3 py-1 text-xs font-medium text-rose-400">
                   {update.category}

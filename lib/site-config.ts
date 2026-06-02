@@ -168,9 +168,6 @@ export function getBadgeDisplay(config: SiteConfig, xp: number) {
 // =============================================================================
 // AI MASTERY HUB CONFIGURATION
 // =============================================================================
-// Theme: Robot Evolution | Colors: Cyan/Blue/Indigo | Mode: Dark Glassmorphism
-// "From Basic Bot to Superintelligence" progression
-// =============================================================================
 
 export const siteConfig: SiteConfig = {
   // ---------------------------------------------------------------------------
@@ -180,14 +177,14 @@ export const siteConfig: SiteConfig = {
   tagline: "Master the AI Revolution",
   description:
     "Level up your AI skills from Basic Bot to Superintelligence. Hands-on lessons, real-world projects, and a gamified progression system that makes learning AI genuinely fun.",
-  domain: "promptyoda.com",
+  domain: "mastertherevolution.com",
 
   // ---------------------------------------------------------------------------
   // Theme: Dark glassmorphism with cyan/blue/indigo palette
   // ---------------------------------------------------------------------------
   theme: {
     id: "robot",
-    emoji: "\u{1F916}", // Robot face
+    emoji: "\u{1F916}",
     primaryColor: "cyan",
     accentColor: "indigo",
     gradientFrom: "from-cyan-500",
@@ -213,11 +210,11 @@ export const siteConfig: SiteConfig = {
       "Superintelligence",
     ],
     tierEmojis: [
-      "\u{1F916}", // Robot
-      "\u{1F9E0}", // Brain
-      "\u26A1",    // Lightning
-      "\u{1F52E}", // Crystal ball
-      "\u{1F31F}", // Glowing star
+      "\u{1F916}",
+      "\u{1F9E0}",
+      "\u26A1",
+      "\u{1F52E}",
+      "\u{1F31F}",
     ],
     tierColors: ["slate", "cyan", "blue", "indigo", "violet"],
     xpPerTier: [100, 300, 600, 1200, 2500],
@@ -231,14 +228,14 @@ export const siteConfig: SiteConfig = {
     {
       id: "beginner",
       name: "Beginner",
-      emoji: "\u{1F331}", // Seedling
+      emoji: "\u{1F331}",
       description: "Start your AI journey here. No prior experience needed.",
       color: "emerald",
     },
     {
       id: "intermediate",
       name: "Intermediate",
-      emoji: "\u2699\uFE0F", // Gear
+      emoji: "\u2699\uFE0F",
       description:
         "Ready to go deeper? Advanced prompting, workflows, and integrations.",
       color: "cyan",
@@ -246,7 +243,7 @@ export const siteConfig: SiteConfig = {
     {
       id: "advanced",
       name: "Advanced",
-      emoji: "\u{1F9E0}", // Brain
+      emoji: "\u{1F9E0}",
       description:
         "Expert-level techniques: fine-tuning, agents, and AI architecture.",
       color: "indigo",
@@ -254,7 +251,7 @@ export const siteConfig: SiteConfig = {
     {
       id: "ai-tools",
       name: "AI Tools",
-      emoji: "\u{1F6E0}\uFE0F", // Hammer and wrench
+      emoji: "\u{1F6E0}\uFE0F",
       description:
         "Hands-on reviews and tutorials for the latest AI tools and platforms.",
       color: "amber",
@@ -262,7 +259,7 @@ export const siteConfig: SiteConfig = {
     {
       id: "weekly-updates",
       name: "Weekly Updates",
-      emoji: "\u{1F4F0}", // Newspaper
+      emoji: "\u{1F4F0}",
       description:
         "Stay current with the AI world. New developments, launches, and analysis.",
       color: "rose",
@@ -270,14 +267,16 @@ export const siteConfig: SiteConfig = {
   ],
 
   // ---------------------------------------------------------------------------
-  // Navigation
+  // Navigation — all links point to real pages
   // ---------------------------------------------------------------------------
   nav: {
     marketing: [
+      { label: "Free Lessons", href: "/free" },
       { label: "Lessons", href: "/lessons" },
-      { label: "Pricing", href: "/pricing" },
+      { label: "Tools", href: "/tools" },
+      { label: "Updates", href: "/updates" },
       { label: "About", href: "/about" },
-      { label: "Blog", href: "/blog" },
+      { label: "Pricing", href: "/pricing" },
     ],
     dashboard: [
       { label: "Dashboard", href: "/dashboard", icon: "LayoutDashboard" },
@@ -290,7 +289,7 @@ export const siteConfig: SiteConfig = {
   },
 
   // ---------------------------------------------------------------------------
-  // Copy: Robot/AI humor throughout
+  // Copy
   // ---------------------------------------------------------------------------
   copy: {
     heroTitle: "Upgrade Your Neural Networks",
@@ -310,7 +309,7 @@ export const siteConfig: SiteConfig = {
   },
 
   // ---------------------------------------------------------------------------
-  // Pricing: Shared across all training platforms
+  // Pricing
   // ---------------------------------------------------------------------------
   pricing: {
     founder: { monthly: 5, yearly: 48 },
@@ -322,7 +321,7 @@ export const siteConfig: SiteConfig = {
   // Contact
   // ---------------------------------------------------------------------------
   contact: {
-    email: "darrinmc1@yahoo.com",
+    email: "hello@mastertherevolution.com",
     github: "https://github.com/darrinmc1",
   },
 } as const satisfies SiteConfig

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ALL_MODULES, getModuleById, type Module } from "@/data/modules"
 import { siteConfig } from "@/lib/site-config"
+import { LessonCompletionTracker } from "@/components/lesson-completion-tracker"
 
 // ---------------------------------------------------------------------------
 // Static params for all lesson pages
@@ -256,17 +257,8 @@ export default function LessonPage({ params }: { params: { id: string } }) {
           ))}
         </div>
 
-        {/* Made it to the end */}
-        <div className="mt-10 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5 text-center">
-          <div className="text-2xl mb-1">{siteConfig.theme.emoji}</div>
-          <p className="text-sm font-semibold text-white">
-            Made it to the end &mdash; nice work.
-          </p>
-          <p className="text-xs text-slate-400 mt-1">
-            That&apos;s one more lesson under your belt. Pick the next one
-            when you&apos;re ready.
-          </p>
-        </div>
+        {/* Interactive Lesson Completion & XP Overlay */}
+        <LessonCompletionTracker moduleId={mod.id} />
 
         {/* Navigation */}
         <div className="mt-12 flex justify-between">

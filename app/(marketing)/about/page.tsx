@@ -1,5 +1,6 @@
 import { siteConfig } from "@/lib/site-config"
 import type { Metadata } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "About",
@@ -70,7 +71,21 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-5">
+              <div className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-slate-900/40">
+                <Image
+                  src="/images/about-coach-bot.svg"
+                  alt="A patient robot coach helping a learner climb steps from confused to confident"
+                  width={1200}
+                  height={900}
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="text-xs text-slate-500 text-center">
+                No yelling. No jargon ambushes. Just steady progress.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4">
               {[
                 {
                   emoji: "\u{1F3AF}",
@@ -105,6 +120,7 @@ export default function AboutPage() {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </div>

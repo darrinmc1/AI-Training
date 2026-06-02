@@ -1,0 +1,30 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#091628"/>
+  <rect x="1" y="1" width="638" height="358" stroke="#1F3B59"/>
+
+  <rect x="64" y="78" width="512" height="210" rx="20" fill="#0D2036" stroke="#274463"/>
+
+  <rect x="102" y="110" width="138" height="120" rx="14" fill="#111827" stroke="#334155"/>
+  <circle cx="145" cy="152" r="18" fill="#22D3EE" fill-opacity="0.5"/>
+  <rect x="174" y="142" width="44" height="8" rx="4" fill="#94A3B8"/>
+  <rect x="174" y="158" width="34" height="8" rx="4" fill="#94A3B8"/>
+
+  <rect x="252" y="110" width="138" height="120" rx="14" fill="#111827" stroke="#334155"/>
+  <circle cx="295" cy="152" r="18" fill="#818CF8" fill-opacity="0.45"/>
+  <rect x="324" y="142" width="44" height="8" rx="4" fill="#94A3B8"/>
+  <rect x="324" y="158" width="34" height="8" rx="4" fill="#94A3B8"/>
+
+  <rect x="402" y="110" width="138" height="120" rx="14" fill="#111827" stroke="#334155"/>
+  <circle cx="445" cy="152" r="18" fill="#34D399" fill-opacity="0.45"/>
+  <rect x="474" y="142" width="44" height="8" rx="4" fill="#94A3B8"/>
+  <rect x="474" y="158" width="34" height="8" rx="4" fill="#94A3B8"/>
+
+  <ellipse cx="320" cy="266" rx="70" ry="34" fill="#102840"/>
+  <rect x="278" y="200" width="84" height="70" rx="16" fill="#0EA5E9"/>
+  <rect x="286" y="208" width="68" height="56" rx="10" fill="#E2E8F0"/>
+  <circle cx="307" cy="234" r="7" fill="#0F172A"/>
+  <circle cx="332" cy="234" r="7" fill="#0F172A"/>
+  <rect x="305" y="249" width="29" height="6" rx="3" fill="#0F172A"/>
+
+  <text x="148" y="320" fill="#94A3B8" font-size="18" font-family="Verdana, sans-serif">Tool lab status: arguing politely, benchmarking loudly.</text>
+</svg>

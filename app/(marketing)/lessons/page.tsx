@@ -1,6 +1,6 @@
 import Link from "next/link"
+import Image from "next/image"
 import {
-  ALL_MODULES,
   BEGINNER_MODULES,
   INTERMEDIATE_MODULES,
   ADVANCED_MODULES,
@@ -39,6 +39,15 @@ function LevelSection({
 
       {modules.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-10 text-center">
+          <div className="mx-auto mb-4 max-w-xs overflow-hidden rounded-xl border border-cyan-500/15 bg-slate-900/40">
+            <Image
+              src="/images/empty-lessons-light.svg"
+              alt="A playful robot waiting for new lessons to finish baking"
+              width={640}
+              height={360}
+              className="w-full h-auto"
+            />
+          </div>
           <div className="text-4xl mb-3">{emoji}</div>
           <p className="text-slate-300 font-semibold mb-1">
             New lessons are still in the oven.
@@ -48,48 +57,59 @@ function LevelSection({
           </p>
         </div>
       ) : (
-      <div className="grid gap-6 md:grid-cols-2">
-        {modules.map((mod) => (
-          <Link
-            key={mod.id}
-            href={`/lessons/${mod.id}`}
-            className={`group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-6 transition-all hover:bg-white/10 hover:border-${color}-500/30 hover:shadow-lg hover:shadow-${color}-500/5`}
-          >
-            <div className="flex items-start justify-between mb-3">
-              <span
-                className={`inline-block rounded-full bg-${color}-500/10 border border-${color}-500/20 px-3 py-1 text-xs font-medium text-${color}-400 uppercase tracking-wide`}
-              >
-                {mod.level}
-              </span>
-              <span className="text-sm text-slate-500">{mod.duration}</span>
-            </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {modules.map((mod) => (
+            <Link
+              key={mod.id}
+              href={`/lessons/${mod.id}`}
+              className={`group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-6 transition-all hover:bg-white/10 hover:border-${color}-500/30 hover:shadow-lg hover:shadow-${color}-500/5`}
+            >
+              <div className="pointer-events-none absolute right-2 top-2 opacity-60 group-hover:opacity-90 transition-opacity">
+                <Image
+                  src="/images/update-card-doodle.svg"
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="h-10 w-10"
+                  aria-hidden
+                />
+              </div>
 
-            <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-              {mod.title}
-            </h3>
-
-            <p className="text-slate-400 text-sm mb-4 line-clamp-2">
-              {mod.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {mod.tags.slice(0, 3).map((tag) => (
+              <div className="flex items-start justify-between mb-3">
                 <span
-                  key={tag}
-                  className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-xs text-slate-500"
+                  className={`inline-block rounded-full bg-${color}-500/10 border border-${color}-500/20 px-3 py-1 text-xs font-medium text-${color}-400 uppercase tracking-wide`}
                 >
-                  {tag}
+                  {mod.level}
                 </span>
-              ))}
-            </div>
+                <span className="text-sm text-slate-500">{mod.duration}</span>
+              </div>
 
-            <div className="mt-4 flex items-center gap-4 text-xs text-slate-500">
-              <span>{mod.learningOutcomes.length} learning outcomes</span>
-              <span>{mod.durationMinutes} min read</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                {mod.title}
+              </h3>
+
+              <p className="text-slate-400 text-sm mb-4 line-clamp-2">
+                {mod.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {mod.tags.slice(0, 3).map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-xs text-slate-500"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-4 flex items-center gap-4 text-xs text-slate-500">
+                <span>{mod.learningOutcomes.length} learning outcomes</span>
+                <span>{mod.durationMinutes} min read</span>
+              </div>
+            </Link>
+          ))}
+        </div>
       )}
     </section>
   )
@@ -107,8 +127,8 @@ export default function LessonsPage() {
             </span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            {ALL_MODULES.length} lessons across 3 levels. Go from Basic Bot to
-            Superintelligence at your own pace &mdash; no rushing, no judging.
+            Go from Basic Bot to Superintelligence at your own pace &mdash; no
+            rushing, no judging.
           </p>
         </div>
       </div>

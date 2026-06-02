@@ -1,0 +1,42 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071729"/>
+      <stop offset="1" stop-color="#152C47"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <rect x="120" y="130" width="960" height="650" rx="28" fill="#0B1728" stroke="#1D4ED8" stroke-opacity="0.35"/>
+  <text x="170" y="200" fill="#67E8F9" font-size="40" font-family="Verdana, sans-serif">Plan Calculator</text>
+
+  <rect x="170" y="245" width="860" height="120" rx="16" fill="#0F223A"/>
+  <text x="205" y="300" fill="#E2E8F0" font-size="28" font-family="Verdana, sans-serif">Founder  |  Standard  |  Premium</text>
+  <text x="205" y="340" fill="#93C5FD" font-size="22" font-family="Verdana, sans-serif">Includes: fewer headaches and more shipped projects</text>
+
+  <rect x="170" y="395" width="520" height="330" rx="18" fill="#111827" stroke="#334155"/>
+  <text x="205" y="445" fill="#A5F3FC" font-size="28" font-family="Verdana, sans-serif">Receipt</text>
+  <text x="205" y="492" fill="#CBD5E1" font-size="22" font-family="Verdana, sans-serif">Confidence gained.................... +900%</text>
+  <text x="205" y="530" fill="#CBD5E1" font-size="22" font-family="Verdana, sans-serif">Tabs left open....................... 47</text>
+  <text x="205" y="568" fill="#CBD5E1" font-size="22" font-family="Verdana, sans-serif">Mystery subscriptions................ 0</text>
+  <line x1="205" y1="592" x2="650" y2="592" stroke="#334155" stroke-width="2"/>
+  <text x="205" y="640" fill="#22D3EE" font-size="26" font-family="Verdana, sans-serif">Total monthly panic: politely reduced</text>
+
+  <ellipse cx="835" cy="560" rx="155" ry="185" fill="#0EA5E9"/>
+  <ellipse cx="860" cy="542" rx="120" ry="155" fill="#22D3EE"/>
+  <circle cx="900" cy="500" r="19" fill="#0F172A"/>
+  <circle cx="905" cy="505" r="7" fill="#F8FAFC"/>
+  <path d="M945 527L1000 550L945 573V527Z" fill="#F59E0B"/>
+  <rect x="790" y="675" width="28" height="76" rx="12" fill="#475569"/>
+  <rect x="865" y="675" width="28" height="76" rx="12" fill="#475569"/>
+
+  <rect x="760" y="450" width="130" height="76" rx="16" fill="#1E293B" stroke="#38BDF8"/>
+  <text x="785" y="496" fill="#BAE6FD" font-size="24" font-family="Verdana, sans-serif">CPA</text>
+
+  <path d="M830 387C854 345 899 340 933 366" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="826" cy="392" r="14" fill="#94A3B8"/>
+  <circle cx="937" cy="368" r="14" fill="#94A3B8"/>
+
+  <text x="170" y="835" fill="#94A3B8" font-size="24" font-family="Verdana, sans-serif">This parrot does not do crypto advice, only clear pricing.</text>
+</svg>
