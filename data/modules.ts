@@ -450,13 +450,13 @@ After:
   001, John Smith, john@email.com, $50
 
 ### Standardize Formats
-- **Dates**: Make sure every date is `YYYY-MM-DD` (not a mix of "Jan 5, 2026" and "01/05/26")
+- **Dates**: Make sure every date is YYYY-MM-DD (not a mix of "Jan 5, 2026" and "01/05/26")
 - **Names**: Split "John Smith" consistently — or keep as full name, but pick one format
-- **Currencies**: Use one currency format: `$50.00` not `50 dollars` or `50 USD`
+- **Currencies**: Use one currency format: $50.00 not "50 dollars" or "50 USD"
 
 ### Fix Missing Values
 - **Bad**: Blank cells, "N/A", "unknown", "-"
-- **Good**: Decide a convention. For numerical data, use `0` or `NULL`. For text, use `"Unknown"`
+- **Good**: Decide a convention. For numerical data, use 0 or NULL. For text, use "Unknown"
 - **Best**: Fill in missing data wherever you can from other records
 
 ## Step 2: Organize Your Data for AI
@@ -692,8 +692,8 @@ System prompt template:
 
 ### Pro Tips for System Prompts
 - **Be prescriptive**: Tell the AI what TO do, not just what NOT to do
-- **Use section headers**: `## Rules`, `## Format`, `## Knowledge` — structure helps the AI parse it correctly
-- **Test edge cases**: "What if the user swears?" → Add a handling rule
+- **Use section headers**: "## Rules", "## Format", "## Knowledge" — structure helps the AI parse it correctly
+- **Test edge cases**: "What if the user swears?" — Add a handling rule
 - **Version control**: Save your system prompts in a Google Doc with dates
 
 ## 3. Multi-Step Reasoning Chains
