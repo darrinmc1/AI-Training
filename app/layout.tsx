@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter, Outfit } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
+import { dark } from "@clerk/themes"
 import "./globals.css"
 import { siteConfig } from "@/lib/site-config"
 import { FeedbackWidget } from "@/components/feedback-widget"
@@ -54,7 +55,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} font-sans antialiased ${siteConfig.theme.bgClass} ${siteConfig.theme.textClass}`}
       >
-        <ClerkProvider>
+        <ClerkProvider appearance={{ baseTheme: dark }}>
           {children}
           <FeedbackWidget />
           <WaitlistPopup />
