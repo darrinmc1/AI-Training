@@ -41,6 +41,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# claude code config
+/.claude/
+
 # local data (email capture / feedback)
 /data/subscribers.json
 /data/feedback.json
