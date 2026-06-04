@@ -106,11 +106,60 @@ Leading companies are not just "adding AI to existing processes." They are **re-
   category: "Business Strategy",
 }
 
+// ── Week of June 1, 2026 ─────────────────────────────────────────────────────
+
+const weekJune2026: WeeklyUpdate = {
+  id: "week-june-1-2026",
+  title: "Anthropic Hits $965B, GPT-5.5 Instant Ships, and AI Infrastructure Goes Mainstream",
+  description:
+    "The biggest week in AI history? Anthropic's record funding, ChatGPT's GPT-5.5 launch, and the $100B infrastructure deals reshaping the industry.",
+  content: `Welcome to the first AI Mastery Hub weekly update. If you only read one thing this week, make it the Anthropic funding story — it changes the competitive landscape entirely.
+
+## Top Stories
+
+### 1. Anthropic Raises $65 Billion at $965 Billion Valuation
+
+**The largest private AI funding round in history.** Anthropic's $65B equity raise at a $965B post-money valuation surpasses OpenAI's $852B private valuation for the first time.
+
+**What matters:** Anthropic is now projecting $10.9B in Q2 2026 revenue (up 130% quarter-over-quarter) and their first operating profit of ~$559M. They also secured a $36B credit facility — backed by Apollo and Blackstone — to buy Google TPU chips for massive data center builds.
+
+**What this means for you:** When companies are spending $100B+ on compute in a single quarter, the tools you use today will be radically more capable within 12 months. Bet on the ecosystem, not individual products.
+
+### 2. GPT-5.5 Instant Becomes Default ChatGPT Model
+
+OpenAI quietly shipped **GPT-5.5 Instant** as the default ChatGPT model. The update brings sharper accuracy, more natural conversation flow, and fewer overly long responses.
+
+**Try this:** Ask GPT-5.5 to explain a concept you understand well. Notice the difference in tone.
+
+### 3. GitHub Copilot's Token Billing Backlash
+
+GitHub switched from flat-rate ($29/month) to token-based billing. One user reported a projected $750/month cost. **The takeaway:** Efficient prompting is now directly tied to your monthly bill.
+
+---
+
+## Tool Spotlight: ChatGPT's New Job Search
+
+ChatGPT now surfaces live job listings from Indeed, Upwork, and Appcast, personalized by your experience. Upload a resume and it tailors it to a role.
+
+**Try it:** *"Find me AI freelance opportunities and tailor my resume for the top match."*
+
+---
+
+## Business Tip of the Week
+
+**Build your AI prompt library now.** The companies winning with AI don't use it for random tasks — they have a library of tested prompts. This week: identify your 3 most repetitive tasks, write a structured prompt for each, and save them. One hour now saves 5+ hours per week forever.`,
+
+  date: "2026-06-04",
+  tags: ["Anthropic", "GPT-5.5", "GitHub Copilot", "Infrastructure"],
+  category: "Weekly Update",
+}
+
 // ---------------------------------------------------------------------------
 // Exports
 // ---------------------------------------------------------------------------
 
 export const ALL_UPDATES: WeeklyUpdate[] = [
+  weekJune2026,
   gpt5Robotics,
   cybersecurityMythos,
   pwcAiDivide,

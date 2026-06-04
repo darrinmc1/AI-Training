@@ -1293,6 +1293,121 @@ Combine all techniques for a production-grade system:
   status: "published",
 }
 
+// ── Premium: Prompt Library ───────────────────────────────────────────────────
+
+const promptLibrary: Module = {
+  id: "prompt-library",
+  title: "Building Your AI Prompt Library: The System That Saves 10 Hours a Week",
+  description:
+    "Stop writing prompts from scratch. Build a reusable prompt library that turns AI from a toy into a 10x productivity engine.",
+  category: "ai-productivity",
+  level: "intermediate",
+  content: `## The Dirty Secret of AI Power Users
+
+They don't write better prompts than you. They write the **same prompts** — over and over — until they're perfect. Then they save them in a library and reuse them forever.
+
+The difference between someone who "tries AI" and someone who gets 10 hours back every week is a folder of tested, refined prompts. That's it.
+
+This lesson walks you through building your own prompt library in under 30 minutes.
+
+---
+
+## Why a Prompt Library Changes Everything
+
+| Without a Library | With a Library |
+|------------------|----------------|
+| Start from scratch every time | One-click access to proven prompts |
+| Inconsistent results | Reliable, predictable output |
+| Forget what worked last week | Iterate and improve over time |
+| Waste 10 mins writing prompts | Spend 10 seconds running them |
+| AI feels like a toy | AI feels like a 10x productivity tool |
+
+---
+
+## 🛠️ Step 1: Set Up Your System
+
+You need three things:
+
+1. **A place to store prompts** — Notion, Google Doc, or even a plain markdown file in your notes app. Start simple.
+2. **A naming convention** — Every prompt needs a clear, searchable name.
+3. **A testing workflow** — Use a prompt 3 times before adding it to your library.
+
+**Your template for each prompt entry:**
+
+| Field | Example |
+|-------|---------|
+| **Name** | "Meeting Summarizer" |
+| **Category** | Productivity |
+| **Best for** | Turning transcripts into action items |
+| **The Prompt** | *"Act as an executive assistant. Summarise this transcript into decisions, action items, and risks. Format as markdown. Let's think step by step."* |
+| **Notes** | Works best with Claude (longer context). Add attendees manually for accuracy. |
+
+---
+
+## 🛠️ Step 2: The 5 Prompts Everyone Needs
+
+Start with these five. They cover 80% of everyday AI use:
+
+### 1. The Better Email Writer
+> *"Act as a professional copywriter. Rewrite the following email to be [shorter/more formal/more persuasive/warmer]. Keep my key points but improve the structure and tone. Here's my draft: [paste]"*
+
+### 2. The Research Assistant
+> *"I need to understand [topic]. Research it and give me: 1) A one-paragraph summary for beginners, 2) The 3 most important things to know, 3) 2-3 specific action items. Cite sources where possible."*
+
+### 3. The Decision Framework
+> *"Help me decide between [option A] and [option B]. Create a pros/cons table considering: cost, time, quality, risk. Give me a recommendation with your reasoning. Let's think step by step."*
+
+### 4. The Brainstorming Engine
+> *"I need [number] creative ideas for [goal]. For each idea, give me: a one-sentence summary, why it might work, and one potential risk. Be creative — don't just give me obvious answers."*
+
+### 5. The Learning Accelerator
+> *"I want to learn [topic]. Create a 30-day learning plan for a complete beginner. Include: what to study each week, specific resources (free), practice exercises, and how to know when I've 'got it'."*
+
+---
+
+## 🛠️ Step 3: Your Prompt Testing Cycle
+
+A prompt isn't "done" until it's been tested 3 times with good results.
+
+| Round | What to Check | Action |
+|-------|---------------|--------|
+| 1 | Does it produce usable output? | If no, add more structure |
+| 2 | Does it work with different inputs? | If no, narrow the scope |
+| 3 | Can someone else use it? | If no, add more examples |
+
+**Pro tip:** After round 3, add the prompt to a shared company/team library. The real ROI multiplies when your whole team uses the same battle-tested prompts.
+
+---
+
+## What You're Building
+
+By the end of this week:
+
+- A searchable prompt library with 5+ tested prompts
+- A template for adding new prompts
+- A testing workflow that guarantees quality
+- A system that saves you 10+ hours per week
+
+The best part? Every prompt you add makes every future prompt faster. It's compounding productivity.
+
+---
+
+**↳ Up next:** Automating your prompt library with AI — connecting prompts together into workflows that run without you. Subscribers get access to a downloadable prompt library template, Notion template, and weekly prompt challenges.`,
+
+  duration: "20 min",
+  durationMinutes: 20,
+  learningOutcomes: [
+    "Set up a searchable prompt library in under 30 minutes",
+    "Build 5 essential prompts that cover 80% of daily AI use",
+    "Apply a 3-round testing cycle to guarantee prompt quality",
+    "Create a system that compounds in value over time",
+  ],
+  tags: ["prompt-library", "productivity", "workflow", "intermediate"],
+  dateAdded: "2026-06-04",
+  lastUpdated: "2026-06-04",
+  status: "published",
+}
+
 // ---------------------------------------------------------------------------
 // Intermediate Modules
 // ---------------------------------------------------------------------------
@@ -1506,6 +1621,7 @@ export const ALL_MODULES: Module[] = [
   aiEthicsHallucinations,
   automatingEverydayTasks,
   // Intermediate
+  promptLibrary,
   ragBasics,
   agenticWorkflows,
   aiCustomerService,

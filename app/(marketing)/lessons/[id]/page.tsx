@@ -200,6 +200,7 @@ export default function LessonPage({ params }: { params: { id: string } }) {
     "ai-first-conversation": "/images/lesson-first-conversation.png",
     "ai-fundamentals": "/images/lesson-fundamentals.png",
     "prompt-engineering-101": "/images/lesson-prompt-engineering.png",
+    "prompt-library": "/images/lesson-prompt-library.png",
   }
   const heroImage = heroImages[params.id]
 
