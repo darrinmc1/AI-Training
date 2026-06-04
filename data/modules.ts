@@ -35,34 +35,88 @@ const whatIsAi: Module = {
   level: "beginner",
   content: `## Imagine Having a Super-Smart Assistant Who Never Sleeps
 
-Picture this: You walk into your office Monday morning, and your emails are sorted, social media posts are scheduled, and you have a customer summary ready.
+Picture this: You walk into your office Monday morning, and your emails are sorted by priority, social media posts are scheduled for the week, customer questions already have draft responses, and your calendar is optimised for deep work.
 
-That's AI working for you.
+That's not a fantasy. That's AI working for you — today, for free, in under 10 minutes.
 
-## What Exactly IS Artificial Intelligence?
+---
 
-Think of AI as a smart computer program that can:
-- Learn patterns from your business data
-- Make predictions about customer behavior
-- Handle repetitive tasks automatically
-- Analyze information faster than humans
+## The 30-Second AI Demo
 
-## Try This Today
+Open ChatGPT (free, no account needed for this). Paste this:
 
-Start with ChatGPT (free) and ask:
-*"Write 5 social media posts for my [business type] targeting [your customers]"*
+> *"I run a [your business type]. List 5 boring, repetitive tasks I do every week that AI could handle for me. For each one, name a specific free tool and give me the exact first prompt I should type."*
 
-**Time**: 10 minutes
-**Cost**: Free
-**Impact**: Hours saved this week
+Watch what happens. Most people get chills the first time they see it.
 
-## Next Steps
+---
 
-1. This week: Try ChatGPT for one business task
-2. Next week: Explore industry-specific AI tools
-3. This month: Implement your first automated workflow
+## What AI Actually Is (No Jargon)
 
-Ready for more? Check out our Intermediate lessons to start implementing AI solutions.`,
+Think of AI as a **reasoning engine** — not a calculator, not a database, but something that can understand context, make judgments, and generate new content.
+
+| Old Way | AI Way |
+|---------|--------|
+| Write emails from scratch | AI drafts 5 versions in seconds |
+| Research competitors manually | AI analyses 20 sites in 1 minute |
+| Create social posts one-by-one | AI generates a month's calendar |
+| Debug code line by line | AI spots the bug and fixes it |
+| Summarise long documents | AI gives you the 3 key points |
+
+The magic isn't that AI is "smart" — it's that AI is **instant**. What takes you 30 minutes takes AI 10 seconds. Not 80% as good. Often better.
+
+---
+
+## Your First AI Win (5 Minutes)
+
+**Task**: Generate a week of social media content.
+
+**Prompt to copy-paste into ChatGPT**:
+
+> *"Act as a social media manager for [your industry]. Create 5 LinkedIn posts for this week. Each post should:*
+> *- Have a hook that stops the scroll*
+> *- Share one actionable tip*
+> *- End with a question to drive engagement*
+> *- Be under 150 words*
+> *Use a professional but warm tone. Start with Monday's post."*
+
+**Why this works**: Instead of asking vaguely ("write social posts"), you've given the AI a role, format, constraints, and structure. This is the secret to every good AI interaction.
+
+---
+
+## The Three Business Superpowers
+
+### 1. Time Multiplication
+Every hour you spend teaching an AI your workflow, you save 10 hours later. The most successful AI users treat it like an apprentice: show it once, it remembers forever.
+
+### 2. Quality Amplification
+AI removes the "blank page problem." Instead of staring at a cursor, you're editing something good into something great. The difference between good and great is easier than the difference between nothing and something.
+
+### 3. Scale Without Headcount
+Want to answer customer emails in 5 languages? Personalise outreach to 1,000 leads? AI does this today. Not next year. Today.
+
+---
+
+## 🛠️ Your 3-Step AI Adoption Plan
+
+| Step | Action | Time | Impact |
+|------|--------|------|--------|
+| **1** | Try the social post prompt above | 5 min | Save 2 hrs/week |
+| **2** | AI-automate one recurring task | 30 min | Save 5 hrs/week |
+| **3** | Build a prompt library for your team | 2 hrs | Save 20 hrs/week across team |
+
+---
+
+## Why This Matters Right Now
+
+The gap between AI leaders and laggards is widening fast. PwC's 2026 study found that **20% of companies are capturing 74% of AI's value**. The difference? They started — even imperfectly — while others were still planning.
+
+You don't need to be a tech company. You don't need a data science team. You need to **start**.
+
+---
+
+**↳ Up next in the full course:** How to build custom GPTs for your specific business workflows, connect AI to your actual data (RAG), and automate multi-step processes with AI agents. Subscribers get the complete 50+ lesson curriculum, weekly updates, and a 5-tier badge system that makes learning genuinely addictive.`,
+
   duration: "10 min",
   durationMinutes: 10,
   learningOutcomes: [
@@ -73,10 +127,9 @@ Ready for more? Check out our Intermediate lessons to start implementing AI solu
   ],
   tags: ["ai-basics", "business-ai", "getting-started"],
   dateAdded: "2025-01-09",
-  lastUpdated: "2026-04-14",
+  lastUpdated: "2026-06-04",
   status: "published",
 }
-
 const aiFundamentals: Module = {
   id: "ai-fundamentals",
   title: "AI Fundamentals",
@@ -84,62 +137,120 @@ const aiFundamentals: Module = {
     "A comprehensive beginner's guide to the world of artificial intelligence — from simple explanations to actionable tips.",
   category: "ai-fundamentals",
   level: "beginner",
-  content: `**Welcome to the World of Artificial Intelligence (AI): A Beginner's Guide**
+  content: `## How Computers Learned to Think
 
-Artificial intelligence is a rapidly evolving field that has revolutionized the way we live and work. As a fundamental technology, AI is transforming industries, businesses, and our daily lives in unprecedented ways. In this article, we'll delve into the basics of AI, exploring its simple explanation, why it matters for business, providing practical examples, and offering actionable tips to get you started.
+In 2012, a computer program saw a cat on YouTube. Not a labelled photo. Not a database search. It just watched 10 million videos and figured out what a cat looks like on its own.
 
-## Simple Explanation
+That moment changed everything.
 
-Imagine you're at a restaurant ordering food. You tell the waiter what you want (e.g., "I'd like a chicken sandwich, please"). The waiter takes note of your request and uses that information to prepare your meal. A few minutes later, the waiter brings out your dish. In this scenario, the waiter has used human intelligence to recognize your order and take action based on that understanding.
+Before that, computers only did what they were explicitly told. After that, they started teaching themselves. Here's how that works and why it matters for your business.
 
-AI works in a similar way, but with machines learning from vast amounts of data. AI algorithms analyze patterns and relationships in data to make predictions, classify objects, or even control physical systems. The key difference lies in the type of intelligence: human-like reasoning and decision-making in AI, versus computational power and processing speed in traditional computers.
+---
 
-## Why it Matters for Business
+## The Three Flavours of AI
 
-Artificial intelligence is no longer a topic of debate; it's a necessary force in modern business. Here are just a few reasons why:
+### 🍦 Narrow AI (What We Have Now)
+Every AI you've used — ChatGPT, Midjourney, Grammarly, Siri — is "Narrow AI." It's brilliant at one thing and useless at everything else. ChatGPT can write a sonnet but can't book a restaurant. That's fine. Narrow AI is incredibly useful.
 
-1. **Increased Efficiency**: AI can automate routine tasks, freeing up human resources to focus on high-value activities. This leads to increased productivity and competitiveness.
-2. **Improved Accuracy**: AI-powered systems can detect patterns and anomalies that humans might miss, resulting in improved accuracy and reduced errors.
-3. **Enhanced Decision-Making**: AI-driven insights can help businesses make data-driven decisions, reducing the risk of costly mistakes.
-4. **Competitive Advantage**: Companies adopting AI early will have a significant advantage over those that don't, setting them up for long-term success.
+### 🍦🍦 General AI (The Holy Grail)
+A machine that can do anything a human can. Doesn't exist yet. Most experts say we're 10-30 years away. Ignore the hype.
 
-## Practical Example
+### 🍦🍦🍦 Superintelligence (The Debate)
+Smarter than all of humanity combined. Pure speculation. Not relevant to anything you'll build this year.
 
-Let's consider a real-world example: online customer service chatbots. These AI-powered systems use natural language processing (NLP) to understand and respond to user queries. For instance, if a customer asks "Why is my order delayed?", the chatbot can analyze their previous interactions, product information, and weather forecasts to provide an accurate answer.
+**Focus on Narrow AI. That's where 100% of business value lives today.**
 
-## Actionable Tips for Beginners
+---
 
-Now that you've got a solid understanding of AI fundamentals, here are three actionable tips to get you started:
+## How AI Actually Works (In 60 Seconds)
 
-### Tip 1: Learn the Basics of Machine Learning
+Here's the simplest explanation you'll ever get:
 
-Machine learning is a key component of AI. To become proficient in machine learning, start by exploring the following topics:
+**Traditional programming:** Human writes rules → Computer follows rules → Output
 
-* Supervised learning: Understand how to train models on labeled data
-* Unsupervised learning: Learn about clustering and dimensionality reduction techniques
-* Deep learning: Discover the basics of neural networks and their applications
+**AI/Machine Learning:** Data + desired output → Computer figures out the rules → Can now handle new data
 
-### Tip 2: Practice with AI-Powered Tools
+The difference is that AI **discovers the patterns itself**. You don't tell it "if the customer spends over $500, send them a discount code." You show it 10,000 past transactions and it figures out who to target on its own.
 
-There are many AI-powered tools available that can help you explore and learn more about AI. Some popular options include:
+---
 
-* Google Cloud AI Platform: Try out various machine learning models, including TensorFlow and PyTorch
-* Microsoft Azure Machine Learning: Experiment with different algorithms and datasets
-* Amazon SageMaker: Develop and deploy AI models using a range of programming languages
+## The Three Learning Styles
 
-### Tip 3: Stay Up-to-Date with Industry News
+| Type | How it learns | Business example |
+|------|--------------|------------------|
+| **Supervised** | Learns from labelled examples | "Here are 1,000 emails marked 'spam' or 'not spam' — now classify a new one" |
+| **Unsupervised** | Finds patterns without labels | "Here's your customer database — find me segments I didn't know existed" |
+| **Reinforcement** | Learns through trial and error | "Here's a warehouse robot — figure out the fastest route by crashing a few times" |
 
-The field of AI is rapidly evolving. To stay ahead of the curve, follow industry leaders, researchers, and news outlets:
+---
 
-* Follow AI experts on Twitter and LinkedIn
-* Read blogs and articles from reputable sources like The New York Times, Forbes, and TechCrunch
-* Attend conferences and workshops to network with peers and learn about the latest developments
+## 🔬 Live Demo: See the Difference
 
-## Conclusion
+Let's compare how a human and an AI approach the same task:
 
-Artificial intelligence is a powerful tool that can revolutionize your business. By understanding its fundamentals, staying up-to-date with industry news, and practicing with AI-powered tools, you'll be well on your way to harnessing the benefits of AI for yourself or your organization.
+**Task**: Find which customer segments are most likely to churn next month.
 
-As you embark on this exciting journey, remember that AI is not a replacement for human intelligence — it's an augmentation of our capabilities. By embracing AI, we can unlock new possibilities, drive innovation, and create a brighter future for all.`,
+**Human approach**: Look at a few spreadsheets, trust gut feeling, maybe check last month's numbers. Takes 2 hours. Gets it 60% right.
+
+**AI approach**: Analyse 50 variables across 10,000 customers — login frequency, support tickets, payment history, feature usage, email opens — and identify the 4 variables that predict 89% of churn. Takes 30 seconds. Gets it 90% right.
+
+**Who wins?** The person using AI. Always.
+
+---
+
+## The 80/20 of AI for Business
+
+You don't need to understand neural networks, backpropagation, or transformers. You need to understand three things:
+
+| Concept | What it means for you |
+|---------|----------------------|
+| **Better data = better AI** | Clean up your spreadsheets. AI is only as good as what you feed it. |
+| **Garbage in = garbage out** | If your data is messy, your AI will be confused. Fix the data first. |
+| **Start small, iterate fast** | Don't build the perfect AI system. Build something tiny, test it, improve it. |
+
+---
+
+## 🛠️ Your First AI Analysis
+
+**Task**: Have AI analyse your business data.
+
+**Prompt for ChatGPT (or Claude)**:
+
+> *"I'm going to paste a sample of my customer data. I want you to:*
+> *1. Identify any patterns or segments I might be missing*
+> *2. Flag any data quality issues (missing fields, inconsistencies)*
+> *3. Suggest 3 specific ways I could use this data with AI*
+> *4. Tell me what additional data I should start collecting*
+>
+> *Here's the data:
+> [paste a small sample of your customer/leads/products data]"*
+
+**Why this works**: Most businesses have data goldmines they're ignoring. AI can spot opportunities in 10 seconds that would take a data analyst 2 days.
+
+---
+
+## The Three AI Myths (Debunked)
+
+| Myth | Truth |
+|------|-------|
+| "AI will replace my job" | AI replaces *tasks*, not jobs. The people who use AI will replace those who don't. |
+| "AI is too expensive" | ChatGPT is free. Many AI tools have generous free tiers. You can start for $0. |
+| "AI is only for tech companies" | The biggest AI adopters are healthcare, finance, retail, and logistics. Every industry is being transformed. |
+
+---
+
+## What We've Covered
+
+✅ How AI learns (supervised, unsupervised, reinforcement)
+✅ Why Narrow AI is all that matters for business
+✅ The 80/20: better data, start small, iterate fast
+✅ A live demo prompt to analyse your own data
+✅ The myths holding most people back
+
+---
+
+**↳ Up next in the full course:** Retrival-Augmented Generation — how to connect AI to your actual business documents so it can answer questions about your specific data. Plus building AI agents that handle multi-step workflows automatically. Subscribers get the full curriculum with 50+ lessons, weekly updates, and real-world projects.`,
+
   duration: "15 min",
   durationMinutes: 15,
   learningOutcomes: [
@@ -150,7 +261,7 @@ As you embark on this exciting journey, remember that AI is not a replacement fo
   ],
   tags: ["ai", "business", "beginner", "tutorial"],
   dateAdded: "2025-08-11",
-  lastUpdated: "2026-04-14",
+  lastUpdated: "2026-06-04",
   status: "published",
 }
 
@@ -161,31 +272,140 @@ const promptEngineering101: Module = {
     "Learn the foundational frameworks for getting consistent, high-quality results from any LLM.",
   category: "ai-fundamentals",
   level: "beginner",
-  content: `Prompt engineering is the core skill of the AI era. It's not about "magic words," but about providing **structure, context, and intent** to a large language model.
+  content: `## The Most Valuable Skill You'll Learn This Year
+
+Every day, millions of people type things like this into ChatGPT:
+
+> *"Write a blog post about AI."*
+
+And every day, they get back generic, forgettable, useless garbage. Then they shrug and say "AI isn't ready yet."
+
+They're wrong. AI is ready. **Their prompting isn't.**
+
+The difference between a useless response and a mind-blowing one is 30 seconds of structured thinking. This lesson teaches you the framework that turns AI from a toy into a 10x productivity tool.
+
+---
 
 ## The PREP Framework
 
-A simple way to structure any prompt is the **PREP** method:
+There are four ingredients to every great prompt. Miss any and the AI guesses. Use all four and it delivers exactly what you need.
 
-1. **P - Persona**: Tell the AI who it should be (e.g., "Act as a senior marketing consultant").
-2. **R - Request**: Be specific about the task (e.g., "Write a 3-paragraph email campaign...").
-3. **E - Examples**: Give it a few examples of the style or format you want.
-4. **P - Parameters**: Set constraints (e.g., "Keep it under 200 words, use a friendly tone").
+| Letter | Meaning | Example |
+|--------|---------|---------|
+| **P** | **Persona** — Who is the AI? | "Act as a senior marketing strategist" |
+| **R** | **Request** — What exactly do you want? | "Write a 5-email nurture sequence" |
+| **E** | **Examples** — Show the style/format | "Like this example: [paste one]" |
+| **P** | **Parameters** — Constraints & rules | "200 words max, friendly tone, no jargon" |
 
-## Pro Tip: Chain-of-Thought
+---
 
-Simply adding the phrase **"Let's think step by step"** to your prompt can significantly increase the reasoning accuracy of models like GPT-4 or Claude 3 Opus.
+## 🔬 Live Demo: PREP in Action
 
-## Real-World Workflow: The Meeting Summarizer
+Let's see the difference. Same request, two different prompts.
 
-**The Goal**: Turn a messy transcript into actionable notes.
+### ❌ Without PREP
+> *"Write an email about our new feature."*
 
-**The Prompt**:
-> "Act as a professional executive assistant. I am going to provide a transcript of a meeting. Please:
-> 1. Summarize the 3 key decisions made.
-> 2. List all action items with their respective owners.
-> 3. Format this as a clean markdown table.
-> Let's think step by step to ensure nothing is missed."`,
+**Result:** Generic, boring, sounds like every other SaaS email. Gets deleted.
+
+### ✅ With PREP
+> *"Act as a senior copywriter for a B2B SaaS company. Write a launch email for our new AI-powered reporting feature. The tone should be excited but confident — like an Apple product reveal. Keep it under 150 words. Include a subject line, a pain point, the solution, and a single CTA. Here's the feature: it turns messy spreadsheets into beautiful dashboards automatically."*
+
+**Result:** An email you could send immediately. Compelling, specific, on-brand.
+
+---
+
+## The Secret Weapon: Chain of Thought
+
+Here's a single phrase that improves AI responses by up to 40%:
+
+> **"Let's think step by step."**
+
+Add it to the end of any complex prompt. It forces the AI to reason through the problem rather than jumping to a conclusion.
+
+**Without it:** *"What's the best marketing strategy for a coffee shop?"* → Generic answer about loyalty cards.
+
+**With it:** *"What's the best marketing strategy for a coffee shop? Let's think step by step."* → The AI considers location, demographic, seasonality, local competition, and budget before giving a tailored recommendation.
+
+---
+
+## 🛠️ Your First Advanced Workflow
+
+Let's build a **Meeting Summarizer** — one of the most practical AI tools you'll ever use.
+
+**The goal:** Turn any meeting transcript into actionable notes in 5 seconds.
+
+**The prompt (copy-paste this):**
+
+> *"Act as a professional executive assistant. I will provide a meeting transcript. Please:*
+> *1. Summarise the 3 key decisions made*
+> *2. List all action items with specific owners and deadlines*
+> *3. Flag any risks or unresolved issues*
+> *4. Suggest follow-up topics for the next meeting*
+> *5. Format this as a clean markdown document*
+>
+> *Let's think step by step to ensure nothing is missed.*
+>
+> *Here is the transcript:
+> [paste your transcript here]"*
+
+**Try it right now.** Paste a real transcript from your last meeting. The result will be better than what your executive assistant would produce — and it takes 5 seconds.
+
+---
+
+## The 5 Prompt Patterns Every Pro Knows
+
+| Pattern | When to use | Example |
+|---------|------------|---------|
+| **Role-play** | Need expert-level output | "Act as a Fortune 500 CFO reviewing this budget" |
+| **Format-first** | Need specific structure | "Respond as a JSON object with keys: summary, action_items, risks" |
+| **Few-shot** | Have a style example | "Here are 3 examples of the tone I want. Now write a 4th." |
+| **Constraint bomb** | AI is being too creative | "Strictly 100 words. No adjectives. Use only data from this document." |
+| **Iterative refine** | First result is close but not perfect | "Good, but make it more formal and add a table of contents." |
+
+---
+
+## The Single Most Important Prompting Lesson
+
+**AI doesn't read your mind. It reads your words.**
+
+Every vague word in your prompt is an invitation for the AI to guess. Every specific word is a constraint that forces quality.
+
+| Instead of... | Write... | Why it matters |
+|--------------|----------|----------------|
+| "Write something about..." | "Write a 3-paragraph analysis of..." | Specifics constrain the output |
+| "Make it good" | "Use a professional but warm tone" | Good is subjective; tone is actionable |
+| "A few ideas" | "Exactly 5 ideas, each with a 1-sentence explanation" | Numbers force completeness |
+| "I need help with..." | "Act as a [role] and help me with [specific task] under [constraints]" | Role + task + constraints = magic |
+
+---
+
+## Your Cheat Sheet (Screenshot This)
+
+Before you write any prompt, ask yourself:
+
+☐ **Persona** — Who is the AI supposed to be?
+☐ **Request** — What is the exact deliverable?
+☐ **Examples** — Have I shown the format I want?
+☐ **Parameters** — What are my constraints (length, tone, format)?
+☐ **Chain of thought** — Did I add "let's think step by step"?
+
+Follow this checklist for one week. You will never go back to vague prompting.
+
+---
+
+## What We've Covered
+
+✅ The PREP framework (Persona, Request, Examples, Parameters)
+✅ Chain of thought prompting (+40% accuracy)
+✅ Your own Meeting Summarizer workflow
+✅ 5 pro-level prompt patterns
+✅ The one rule that changes everything
+
+---
+
+**↳ Up next in the full course:** Advanced Prompt Engineering — structured outputs, system prompts, prompt chains, and multi-step reasoning for complex business workflows. Plus building custom GPTs that embed your business knowledge. Subscribers get hands-on projects, downloadable prompt libraries, and weekly prompt challenges.`,
+
   duration: "12 min",
   durationMinutes: 12,
   learningOutcomes: [
@@ -196,7 +416,7 @@ Simply adding the phrase **"Let's think step by step"** to your prompt can signi
   ],
   tags: ["Prompt Engineering", "Foundations", "Productivity"],
   dateAdded: "2026-04-14",
-  lastUpdated: "2026-04-14",
+  lastUpdated: "2026-06-04",
   status: "published",
 }
 
