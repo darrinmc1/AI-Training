@@ -2,6 +2,9 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
 
 const FREE_PREVIEW_LESSON_IDS = [
   "what-is-ai",
+  "ai-terminology",
+  "ai-toolkit",
+  "ai-first-conversation",
   "ai-fundamentals",
   "prompt-engineering-101",
 ] as const

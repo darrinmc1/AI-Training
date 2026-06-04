@@ -265,6 +265,295 @@ You don't need to understand neural networks, backpropagation, or transformers. 
   status: "published",
 }
 
+const aiTerminology: Module = {
+  id: "ai-terminology",
+  title: "AI Terminology 101: Speaking the Language",
+  description:
+    "The essential AI words and phrases explained in plain English — no prior knowledge needed.",
+  category: "ai-fundamentals",
+  level: "beginner",
+  content: `## Why You Need to Know These Words
+
+You don't need to be a programmer to use AI. But knowing 10 key terms turns you from someone who "tries AI" into someone who **commands** it.
+
+Think of this like learning to drive. You don't need to know how an engine works. But you should know what the pedals do.
+
+---
+
+## The 10 Words You Actually Need
+
+| Term | Plain English | Why It Matters |
+|------|--------------|----------------|
+| **LLM** | A giant brain trained on most of the internet. ChatGPT, Claude, and Gemini are all LLMs. | Every AI tool you'll use runs on an LLM. They're the engine. |
+| **Prompt** | The message you type into the AI. That's it. A question, an instruction, a request. | Better prompts = better results. The whole point of this course. |
+| **Token** | A chunk of text — roughly ¾ of a word. "Hello world" = 2 tokens. | Determines how much you can type and how long the AI's response can be. |
+| **Context Window** | How much the AI can "remember" in one conversation. Like its short-term memory. | Bigger context = the AI can handle entire books, not just paragraphs. |
+| **Hallucination** | When the AI confidently says something completely wrong. It sounds real but isn't. | Always fact-check AI outputs. It's not lying — it's guessing confidently. |
+| **Training** | The process of teaching an AI by showing it millions of examples. | Happens once, before you ever use it. You don't need to do this. |
+| **Inference** | When the AI uses its training to answer your question. | Every time you type a prompt, you're running inference. That's the magic. |
+| **Fine-tuning** | Taking a pre-trained AI and teaching it extra stuff (like your company's writing style). | Advanced. Most people never need this. Useful for specialised tasks. |
+| **Temperature** | How "creative" the AI is allowed to be. Low = predictable. High = surprising. | Low (0.1) for facts. High (0.8) for creative writing. Default is usually fine. |
+| **API** | A way for programs to talk to each other. Lets you plug AI into your own apps. | Advanced. But this is how businesses automate with AI. |
+
+---
+
+## 🧠 A Quick Way to Sound Like You Know What You're Talking About
+
+| Don't Say | Say Instead |
+|-----------|-------------|
+| "The AI chat thing" | "I'm using an LLM" |
+| "It made stuff up" | "It hallucinated" |
+| "I ran out of room" | "I hit the context limit" |
+| "How creative is it?" | "What temperature setting?" |
+| "Tell me about..." | "Here's my prompt..." |
+
+---
+
+## 🛠️ 30-Second Practice
+
+Open ChatGPT or Claude right now. Type this:
+
+> *"Explain the term 'context window' using a sandwich analogy. Keep it under 3 sentences."*
+
+See? Now you already know enough to test whether the AI understands the concept correctly. That's the power of knowing the vocabulary.
+
+---
+
+## What We've Covered
+
+✅ LLM — the engine behind every AI tool
+✅ Prompt — the message you send
+✅ Token — how AI measures text
+✅ Context window — AI's short-term memory
+✅ Hallucination — when AI is wrong but sounds right
+✅ Temperature — how creative the AI gets`,
+
+  duration: "5 min",
+  durationMinutes: 5,
+  learningOutcomes: [
+    "Define 10 essential AI terms in plain English",
+    "Recognise AI jargon when you hear it",
+    "Understand what an LLM is and how it works",
+    "Identify when an AI might be hallucinating",
+  ],
+  tags: ["terminology", "basics", "glossary"],
+  dateAdded: "2026-06-04",
+  lastUpdated: "2026-06-04",
+  status: "published",
+}
+
+const aiToolkit: Module = {
+  id: "ai-toolkit",
+  title: "Your AI Toolkit: The 5 Tools You'll Use Every Day",
+  description:
+    "A no-nonsense guide to the most common AI tools — what they do, what they cost, and when to use each one.",
+  category: "ai-fundamentals",
+  level: "beginner",
+  content: `## Stop Downloading Everything. Pick the Right Tool.
+
+There are thousands of AI tools. You need exactly five.
+
+Each of these tools is free to start, runs in your browser, and solves a different problem. Learn these five and you cover 95% of what AI can do for you today.
+
+---
+
+## The Big Five
+
+| Tool | Best For | Free? | Also Try... |
+|------|----------|-------|-------------|
+| **ChatGPT** | Writing, analysis, coding, brainstorming, research | ✅ Free tier (GPT-3.5). $20/mo for GPT-4 | The most versatile. Start here. |
+| **Claude** | Long documents, careful analysis, safe outputs | ✅ Free tier. $20/mo for Sonnet | Better than ChatGPT at handling 100+ page documents. |
+| **Gemini** | Google integration, YouTube analysis, image understanding | ✅ Free tier | Great if you live in Google Workspace. |
+| **Perplexity** | Research with citations — like a smart search engine | ✅ Free tier. $20/mo for Pro | It shows you *where* it got the information. |
+| **Copilot** | Coding assistance inside VS Code / GitHub | ✅ Free tier | The standard for writing and understanding code. |
+
+---
+
+## 🔬 Demo: Same Question, Four Answers
+
+To see how they differ, ask all four the same question:
+
+> *"What are 3 emerging trends in [your industry] for 2026? Cite your sources."*
+
+| Tool | What You'll Notice |
+|------|-------------------|
+| **ChatGPT** | Long, detailed answer. Good structure. May guess sources. |
+| **Claude** | More cautious. Will say "I don't have real-time data" if it can't browse. Safer. |
+| **Gemini** | Pulls from Google Search. More current. Links to actual articles. |
+| **Perplexity** | Every claim has a citation. Best for research you need to verify. |
+
+**The pro move:** Use Perplexity for research, then ChatGPT or Claude to turn that research into output.
+
+---
+
+## How to Choose
+
+| You Want To... | Use This |
+|----------------|----------|
+| Write an email, blog post, or proposal | ChatGPT or Claude |
+| Research a topic with verified sources | Perplexity |
+| Analyse a 50-page PDF | Claude (huge context window) |
+| Brainstorm ideas quickly | ChatGPT or Gemini |
+| Write or debug code | Copilot or ChatGPT |
+| Check facts with live search | Gemini or Perplexity |
+| Draft social media content | ChatGPT |
+| Summarise a YouTube video | Gemini |
+
+---
+
+## 🛠️ 30-Second Practice
+
+Open **two** of these tools in separate tabs. Ask them both:
+
+> *"Explain [a topic you understand well] in 3 sentences."*
+
+Compare the answers. Notice how each tool has a different personality. This is the fastest way to learn which tool fits your brain.
+
+---
+
+## What We've Covered
+
+✅ ChatGPT — the all-rounder. Start here.
+✅ Claude — best for long documents and safe outputs
+✅ Gemini — Google integration and live search
+✅ Perplexity — research with citations
+✅ Copilot — coding assistant
+✅ How to pick the right tool for any task`,
+
+  duration: "6 min",
+  durationMinutes: 6,
+  learningOutcomes: [
+    "Name the 5 most important AI tools and their strengths",
+    "Choose the right tool for any common task",
+    "Compare output quality across different AI models",
+    "Start using at least 2 AI tools immediately",
+  ],
+  tags: ["tools", "chatgpt", "claude", "beginner"],
+  dateAdded: "2026-06-04",
+  lastUpdated: "2026-06-04",
+  status: "published",
+}
+
+const aiFirstConversation: Module = {
+  id: "ai-first-conversation",
+  title: "Your First AI Conversation: How to Talk to AI",
+  description:
+    "The simplest guide to having your first real conversation with an AI — and getting something useful out of it.",
+  category: "ai-fundamentals",
+  level: "beginner",
+  content: `## You've Opened ChatGPT. Now What?
+
+This is the moment where most people freeze. They stare at the blank input box and type something like:
+
+> *"Hello"*
+
+And the AI says "Hello! How can I help you today?" and they think "Cool, now what?"
+
+This lesson gives you a dead-simple formula for getting something useful every single time.
+
+---
+
+## The Three-Question Formula
+
+Every great AI conversation follows the same three steps:
+
+| Step | What You Do | Example |
+|------|-------------|---------|
+| **1. Ask** | Type what you want — even if it's messy | "Help me write a happy birthday email for my boss" |
+| **2. React** | Tell the AI what you like and don't like | "Too formal. Make it funnier." |
+| **3. Refine** | Give one more direction | "Add a joke about golf. He loves golf." |
+
+That's it. Ask, react, refine. You're now having an AI conversation.
+
+---
+
+## 🛠️ Live Demo: Your First Conversation
+
+**Step 1**: Open ChatGPT and type exactly this:
+
+> *"I need to write a short email. I'm recommending a colleague for a promotion. Give me a draft that I can personalise."*
+
+**What happens**: The AI writes a solid draft email. It won't be perfect — but it gives you a 7/10 starting point instead of staring at a blank page.
+
+**Step 2**: Now type:
+
+> *"Shorten it. Make it sound more like me — casual but professional."*
+
+**What happens**: The AI adjusts. It doesn't start over, it iterates.
+
+**Step 3**: Type:
+
+> *"Add a specific example of a project we worked on together. Use [project name] as a placeholder I can fill in."*
+
+**What happens**: The AI adds the detail. Now you have a 9/10 email that needs 30 seconds of personalisation.
+
+---
+
+## The Golden Rule of AI Conversations
+
+**The first response is never the best response.**
+
+Treat the AI like a junior employee. It needs feedback. The magic doesn't happen on prompt #1 — it happens on the third or fourth exchange when the AI has learned what you actually want.
+
+| Round | What to Say | Why |
+|-------|-------------|-----|
+| 1 | Your raw request | Gets the first draft |
+| 2 | "Make it shorter / longer / funnier / more formal" | Narrows the direction |
+| 3 | "Add [specific detail]. Remove [something]. Change the tone to [X]." | Polishes to exactly what you need |
+
+---
+
+## Three Things NOT to Worry About
+
+| Don't Worry About | Why |
+|-------------------|-----|
+| **"Am I typing this wrong?"** | There's no wrong way. The AI adapts to you. |
+| **"Will it remember previous chats?"** | Each conversation is fresh. AI has no memory of your other chats. |
+| **"Am I being rude?"** | The AI doesn't have feelings. Be as direct as you want. |
+
+---
+
+## A Quick Safety Rule
+
+Don't paste anything you wouldn't want the internet to see. AI companies use conversations to improve their models. No passwords, no financial data, no client lists unless you're on a paid plan with privacy guarantees.
+
+---
+
+## 🛠️ Your First Assignment
+
+Before your next coffee break:
+
+1. Open ChatGPT
+2. Type exactly: *"I want to [do something]. Give me 3 ways AI can help. Show me the first prompt I should type for each."*
+3. Pick one of the three and actually try it
+4. React and refine until you're happy
+
+You've just had your first productive AI conversation. Welcome to the future of work.
+
+---
+
+## What We've Covered
+
+✅ The Ask → React → Refine formula
+✅ Why the first response is never the best
+✅ How to iterate toward great output
+✅ Privacy basics: don't paste sensitive data
+✅ Your first real AI conversation`,
+
+  duration: "5 min",
+  durationMinutes: 5,
+  learningOutcomes: [
+    "Have your first productive conversation with an AI",
+    "Use the Ask → React → Refine formula",
+    "Know how to iterate from a 7/10 response to a 9/10",
+    "Understand basic AI safety and privacy practices",
+  ],
+  tags: ["beginner", "conversation", "first-steps"],
+  dateAdded: "2026-06-04",
+  lastUpdated: "2026-06-04",
+  status: "published",
+}
+
 const promptEngineering101: Module = {
   id: "prompt-engineering-101",
   title: "Prompt Engineering 101: Mastering the Art of AI Communication",
@@ -1210,6 +1499,9 @@ export const ALL_MODULES: Module[] = [
   // Beginner
   whatIsAi,
   aiFundamentals,
+  aiTerminology,
+  aiToolkit,
+  aiFirstConversation,
   promptEngineering101,
   aiEthicsHallucinations,
   automatingEverydayTasks,
