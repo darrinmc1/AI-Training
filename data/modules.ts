@@ -33,11 +33,11 @@ const whatIsAi: Module = {
     "Discover what artificial intelligence really is and how it can transform your business starting today.",
   category: "ai-fundamentals",
   level: "beginner",
-  content: `## Imagine Having a Super-Smart Assistant Who Never Sleeps
+  content: `## Imagine Having a Super-Smart Assistant Who Never Sleeps (And Doesn't Steal Your Lunch)
 
 Picture this: You walk into your office Monday morning, and your emails are sorted by priority, social media posts are scheduled for the week, customer questions already have draft responses, and your calendar is optimised for deep work.
 
-That's not a fantasy. That's AI working for you — today, for free, in under 10 minutes.
+That's not a fantasy. That's AI working for you — today, for free, in under 10 minutes. And unlike that intern you had last summer, this one doesn't need coffee breaks or ask about your weekend plans.
 
 ---
 
@@ -63,7 +63,7 @@ Think of AI as a **reasoning engine** — not a calculator, not a database, but 
 | Debug code line by line | AI spots the bug and fixes it |
 | Summarise long documents | AI gives you the 3 key points |
 
-The magic isn't that AI is "smart" — it's that AI is **instant**. What takes you 30 minutes takes AI 10 seconds. Not 80% as good. Often better.
+The magic isn't that AI is "smart" — it's that AI is **instant**. What takes you 30 minutes takes AI 10 seconds. Not 80% as good. Often better. (And it never shows up to a meeting saying "sorry, I was in another meeting.")
 
 ---
 
@@ -80,7 +80,7 @@ The magic isn't that AI is "smart" — it's that AI is **instant**. What takes y
 > *- Be under 150 words*
 > *Use a professional but warm tone. Start with Monday's post."*
 
-**Why this works**: Instead of asking vaguely ("write social posts"), you've given the AI a role, format, constraints, and structure. This is the secret to every good AI interaction.
+**Why this works**: Instead of asking vaguely ("write social posts"), you've given the AI a role, format, constraints, and structure. This is the secret to every good AI interaction. It's the difference between "draw a horse" and "draw a horse wearing a top hat, riding a unicycle, on a Tuesday." Specificity matters.
 
 ---
 
@@ -111,11 +111,11 @@ Want to answer customer emails in 5 languages? Personalise outreach to 1,000 lea
 
 The gap between AI leaders and laggards is widening fast. PwC's 2026 study found that **20% of companies are capturing 74% of AI's value**. The difference? They started — even imperfectly — while others were still planning.
 
-You don't need to be a tech company. You don't need a data science team. You need to **start**.
+You don't need to be a tech company. You don't need a data science team. You need to **start**. (And maybe cut one meeting from your calendar. You know the one — the one that could have been an email.)
 
 ---
 
-**↳ Up next in the full course:** How to build custom GPTs for your specific business workflows, connect AI to your actual data (RAG), and automate multi-step processes with AI agents. Subscribers get the complete 50+ lesson curriculum, weekly updates, and a 5-tier badge system that makes learning genuinely addictive.`,
+**↳ Up next in the full course:** How to build custom GPTs for your specific business workflows, connect AI to your actual data (RAG), and automate multi-step processes with AI agents. Subscribers get the complete 50+ lesson curriculum, weekly updates, and a 5-tier badge system that makes learning genuinely addictive. (Warning: may cause uncontrollable urges to automate things unnecessarily.)`,
 
   duration: "10 min",
   durationMinutes: 10,
@@ -137,13 +137,13 @@ const aiFundamentals: Module = {
     "A comprehensive beginner's guide to the world of artificial intelligence — from simple explanations to actionable tips.",
   category: "ai-fundamentals",
   level: "beginner",
-  content: `## How Computers Learned to Think
+  content: `## How Computers Learned to Think (And Why Yours Still Asks for Updates at the Worst Time)
 
 In 2012, a computer program saw a cat on YouTube. Not a labelled photo. Not a database search. It just watched 10 million videos and figured out what a cat looks like on its own.
 
-That moment changed everything.
+That moment changed everything. (Also, it was probably watching cat videos instead of doing its actual job, which makes it remarkably similar to humans.)
 
-Before that, computers only did what they were explicitly told. After that, they started teaching themselves. Here's how that works and why it matters for your business.
+Before that, computers only did what they were explicitly told. After that, they started teaching themselves.
 
 ---
 
@@ -233,9 +233,9 @@ You don't need to understand neural networks, backpropagation, or transformers. 
 
 | Myth | Truth |
 |------|-------|
-| "AI will replace my job" | AI replaces *tasks*, not jobs. The people who use AI will replace those who don't. |
-| "AI is too expensive" | ChatGPT is free. Many AI tools have generous free tiers. You can start for $0. |
-| "AI is only for tech companies" | The biggest AI adopters are healthcare, finance, retail, and logistics. Every industry is being transformed. |
+| "AI will replace my job" | AI replaces *tasks*, not jobs. The people who use AI will replace those who don't. (Your job is safe. Your Excel-based busywork is not.) |
+| "AI is too expensive" | ChatGPT is free. Many AI tools have generous free tiers. You can start for $0. That's less than a fancy coffee. |
+| "AI is only for tech companies" | The biggest AI adopters are healthcare, finance, retail, and logistics. Every industry is being transformed. Even your uncle's plumbing business could use AI for scheduling. |
 
 ---
 
@@ -272,11 +272,11 @@ const aiTerminology: Module = {
     "The essential AI words and phrases explained in plain English — no prior knowledge needed.",
   category: "ai-fundamentals",
   level: "beginner",
-  content: `## Why You Need to Know These Words
+  content: `## Why You Need to Know These Words (Or: How to Sound Smart at Parties)
 
 You don't need to be a programmer to use AI. But knowing 10 key terms turns you from someone who "tries AI" into someone who **commands** it.
 
-Think of this like learning to drive. You don't need to know how an engine works. But you should know what the pedals do.
+Think of this like learning to drive. You don't need to know how an engine works. But you should know what the pedals do. Also, knowing the words makes you sound terrifyingly intelligent in meetings. Use "context window" three times in one sentence and watch people nod respectfully.
 
 ---
 
@@ -288,8 +288,8 @@ Think of this like learning to drive. You don't need to know how an engine works
 | **Prompt** | The message you type into the AI. That's it. A question, an instruction, a request. | Better prompts = better results. The whole point of this course. |
 | **Token** | A chunk of text — roughly ¾ of a word. "Hello world" = 2 tokens. | Determines how much you can type and how long the AI's response can be. |
 | **Context Window** | How much the AI can "remember" in one conversation. Like its short-term memory. | Bigger context = the AI can handle entire books, not just paragraphs. |
-| **Hallucination** | When the AI confidently says something completely wrong. It sounds real but isn't. | Always fact-check AI outputs. It's not lying — it's guessing confidently. |
-| **Training** | The process of teaching an AI by showing it millions of examples. | Happens once, before you ever use it. You don't need to do this. |
+| **Hallucination** | When the AI confidently says something completely wrong. It sounds real but isn't. Like that coworker who nods along in meetings and then says something wildly incorrect with total conviction. | Always fact-check AI outputs. It's not lying — it's guessing confidently. |
+| **Training** | The process of teaching an AI by showing it millions of examples. Like showing a child 10,000 pictures of dogs until they finally stop calling everything with four legs a "dog." | Happens once, before you ever use it. You don't need to do this. |
 | **Inference** | When the AI uses its training to answer your question. | Every time you type a prompt, you're running inference. That's the magic. |
 | **Fine-tuning** | Taking a pre-trained AI and teaching it extra stuff (like your company's writing style). | Advanced. Most people never need this. Useful for specialised tasks. |
 | **Temperature** | How "creative" the AI is allowed to be. Low = predictable. High = surprising. | Low (0.1) for facts. High (0.8) for creative writing. Default is usually fine. |
@@ -349,11 +349,11 @@ const aiToolkit: Module = {
     "A no-nonsense guide to the most common AI tools — what they do, what they cost, and when to use each one.",
   category: "ai-fundamentals",
   level: "beginner",
-  content: `## Stop Downloading Everything. Pick the Right Tool.
+  content: `## Stop Downloading Everything. Pick the Right Tool. (Your Computer Thanks You.)
 
-There are thousands of AI tools. You need exactly five.
+There are thousands of AI tools. You need exactly five. Maybe six if you count the one that turns your selfies into renaissance paintings. (You don't need that one either.)
 
-Each of these tools is free to start, runs in your browser, and solves a different problem. Learn these five and you cover 95% of what AI can do for you today.
+Each of these tools is free to start, runs in your browser, and solves a different problem. Learn these five and you cover 95% of what AI can do for you today. The other 5% is generating pictures of cats in space.
 
 ---
 
@@ -441,15 +441,15 @@ const aiFirstConversation: Module = {
     "The simplest guide to having your first real conversation with an AI — and getting something useful out of it.",
   category: "ai-fundamentals",
   level: "beginner",
-  content: `## You've Opened ChatGPT. Now What?
+  content: `## You've Opened ChatGPT. Now What? (The Most Terrifying Blank Box in Technology)
 
-This is the moment where most people freeze. They stare at the blank input box and type something like:
+This is the moment where most people freeze. They stare at the blank input box like it's a microphone at karaoke night. Then they type something like:
 
 > *"Hello"*
 
-And the AI says "Hello! How can I help you today?" and they think "Cool, now what?"
+And the AI says "Hello! How can I help you today?" and they think "Cool, now what?" and close the tab, never to return.
 
-This lesson gives you a dead-simple formula for getting something useful every single time.
+This lesson gives you a dead-simple formula for getting something useful every single time. No stage fright required.
 
 ---
 
@@ -509,11 +509,11 @@ Treat the AI like a junior employee. It needs feedback. The magic doesn't happen
 |-------------------|-----|
 | **"Am I typing this wrong?"** | There's no wrong way. The AI adapts to you. |
 | **"Will it remember previous chats?"** | Each conversation is fresh. AI has no memory of your other chats. |
-| **"Am I being rude?"** | The AI doesn't have feelings. Be as direct as you want. |
+| **"Am I being rude?"** | The AI doesn't have feelings. You can say "this is terrible, do it again" and it won't cry. (Try that with a human coworker.) |
 
 ---
 
-## A Quick Safety Rule
+## A Quick Safety Rule (Don't Be That Person)
 
 Don't paste anything you wouldn't want the internet to see. AI companies use conversations to improve their models. No passwords, no financial data, no client lists unless you're on a paid plan with privacy guarantees.
 
@@ -561,7 +561,7 @@ const promptEngineering101: Module = {
     "Learn the foundational frameworks for getting consistent, high-quality results from any LLM.",
   category: "ai-fundamentals",
   level: "beginner",
-  content: `## The Most Valuable Skill You'll Learn This Year
+  content: `## The Most Valuable Skill You'll Learn This Year (Seriously, This One)
 
 Every day, millions of people type things like this into ChatGPT:
 
@@ -569,9 +569,9 @@ Every day, millions of people type things like this into ChatGPT:
 
 And every day, they get back generic, forgettable, useless garbage. Then they shrug and say "AI isn't ready yet."
 
-They're wrong. AI is ready. **Their prompting isn't.**
+They're wrong. AI is ready. **Their prompting isn't.** It's like blaming the oven because you burned a frozen pizza.
 
-The difference between a useless response and a mind-blowing one is 30 seconds of structured thinking. This lesson teaches you the framework that turns AI from a toy into a 10x productivity tool.
+The difference between a useless response and a mind-blowing one is 30 seconds of structured thinking. This lesson teaches you the framework that turns AI from a toy into a 10x productivity tool. (Or at least stops it from writing like a motivational poster.)
 
 ---
 
@@ -595,7 +595,7 @@ Let's see the difference. Same request, two different prompts.
 ### ❌ Without PREP
 > *"Write an email about our new feature."*
 
-**Result:** Generic, boring, sounds like every other SaaS email. Gets deleted.
+**Result:** Generic, boring, sounds like every other SaaS email. Gets deleted. Unread. Into the void.
 
 ### ✅ With PREP
 > *"Act as a senior copywriter for a B2B SaaS company. Write a launch email for our new AI-powered reporting feature. The tone should be excited but confident — like an Apple product reveal. Keep it under 150 words. Include a subject line, a pain point, the solution, and a single CTA. Here's the feature: it turns messy spreadsheets into beautiful dashboards automatically."*
@@ -656,7 +656,7 @@ Let's build a **Meeting Summarizer** — one of the most practical AI tools you'
 
 ## The Single Most Important Prompting Lesson
 
-**AI doesn't read your mind. It reads your words.**
+**AI doesn't read your mind. It reads your words.** (Which is unfortunate, because if it could read your mind, you wouldn't have to write so many emails.)
 
 Every vague word in your prompt is an invitation for the AI to guess. Every specific word is a constraint that forces quality.
 
@@ -679,7 +679,7 @@ Before you write any prompt, ask yourself:
 ☐ **Parameters** — What are my constraints (length, tone, format)?
 ☐ **Chain of thought** — Did I add "let's think step by step"?
 
-Follow this checklist for one week. You will never go back to vague prompting.
+Follow this checklist for one week. You will never go back to vague prompting. (Your coworkers will wonder why your emails suddenly sound like they were written by a team of professional copywriters. They don't need to know.)
 
 ---
 

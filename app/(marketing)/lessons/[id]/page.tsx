@@ -192,6 +192,17 @@ export default function LessonPage({ params }: { params: { id: string } }) {
 
   const color = levelColor(mod.level)
 
+  // Hero image per lesson
+  const heroImages: Record<string, string> = {
+    "what-is-ai": "/images/lesson-what-is-ai.png",
+    "ai-terminology": "/images/lesson-terminology.png",
+    "ai-toolkit": "/images/lesson-toolkit.png",
+    "ai-first-conversation": "/images/lesson-first-conversation.png",
+    "ai-fundamentals": "/images/lesson-fundamentals.png",
+    "prompt-engineering-101": "/images/lesson-prompt-engineering.png",
+  }
+  const heroImage = heroImages[params.id]
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50">
       {/* Header */}
@@ -238,6 +249,21 @@ export default function LessonPage({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
+
+      {/* Hero Image */}
+      {heroImage && (
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 mb-8 shadow-2xl shadow-cyan-500/10">
+            <img
+              src={heroImage}
+              alt=""
+              className="w-full h-auto object-cover"
+              style={{ maxHeight: "320px" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none" />
+          </div>
+        </div>
+      )}
 
       {/* Lesson Content */}
       <div className="mx-auto max-w-3xl px-6 py-12">
