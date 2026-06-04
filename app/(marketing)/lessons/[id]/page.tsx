@@ -261,14 +261,70 @@ export default function LessonPage({ params }: { params: { id: string } }) {
         <LessonCompletionTracker moduleId={mod.id} />
 
         {/* Navigation */}
-        <div className="mt-12 flex justify-between">
-          <Link
-            href="/lessons"
-            className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
-          >
-            &larr; All Lessons
-          </Link>
-        </div>
+        <div className="mt-12">
+            <div className="flex items-center justify-between gap-4">
+              {/* Previous Lesson */}
+              {(() => {
+                const idx = ALL_MODULES.findIndex((m) => m.id === params.id)
+                const prev = idx > 0 ? ALL_MODULES[idx - 1] : null
+                return prev ? (
+                  <Link
+                    href={`/lessons/${prev.id}`}
+                    className="group flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors max-w-[45%]"
+                  >
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10 transition-all duration-200">
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M15 18l-6-6 6-6" />
+                      </svg>
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Previous</p>
+                      <p className="text-xs font-medium truncate text-slate-300 group-hover:text-white transition-colors">{prev.title}</p>
+                    </div>
+                  </Link>
+                ) : (
+                  <div />
+                )
+              })()}
+
+              {/* Next Lesson */}
+              {(() => {
+                const idx = ALL_MODULES.findIndex((m) => m.id === params.id)
+                const next = idx < ALL_MODULES.length - 1 ? ALL_MODULES[idx + 1] : null
+                return next ? (
+                  <Link
+                    href={`/lessons/${next.id}`}
+                    className="group flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors text-right max-w-[45%]"
+                  >
+                    <div className="min-w-0">
+                      <p className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Next</p>
+                      <p className="text-xs font-medium truncate text-slate-300 group-hover:text-white transition-colors">{next.title}</p>
+                    </div>
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10 transition-all duration-200">
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    </span>
+                  </Link>
+                ) : (
+                  <div />
+                )
+              })()}
+            </div>
+
+            {/* Back to all lessons */}
+            <div className="mt-6 text-center">
+              <Link
+                href="/lessons"
+                className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors"
+              >
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                All Lessons
+              </Link>
+            </div>
+          </div>
       </div>
     </div>
   )
