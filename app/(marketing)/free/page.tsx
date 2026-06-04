@@ -8,6 +8,9 @@ import { ArrowRight, BookOpen, Clock, Zap, Star, Lock } from "lucide-react"
 
 const FREE_LESSON_IDS = [
   "what-is-ai",
+  "ai-terminology",
+  "ai-toolkit",
+  "ai-first-conversation",
   "ai-fundamentals",
   "prompt-engineering-101",
 ] as const
@@ -40,22 +43,22 @@ export default function FreeLessonsPage() {
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display leading-tight mb-6">
-              <span className="text-white">3 Free Lessons.</span>
+              <span className="text-white">6 Free Lessons.</span>
               <br />
               <span className="gradient-text">No Strings Attached.</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
               Real AI lessons written for real people. No jargon overload, no PhD required.
-              Read these three — if you like them, you&apos;ll love what&apos;s behind the door.
+              Read these six — if you like them, you&apos;ll love what&apos;s behind the door.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
               <div className="flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-emerald-500" />
-                <span>3 complete lessons</span>
+                <span>6 complete lessons</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-cyan-500" />
-                <span>~35 minutes total</span>
+                <span>~55 minutes total</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="h-4 w-4 text-indigo-500" />
