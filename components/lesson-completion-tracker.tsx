@@ -5,7 +5,7 @@ import { useUserProgressStore } from "@/lib/user-progress-store"
 import { useBadgeStore } from "@/lib/badge-store"
 import { siteConfig } from "@/lib/site-config"
 import { getBadgeById } from "@/data/badges"
-import { ALL_MODULES } from "@/data/modules"
+import { TOTAL_MODULE_COUNT } from "@/data/modules"
 import { CheckCircle2, Award, Zap, Sparkles, BookOpen, Clock, ArrowRight } from "lucide-react"
 
 interface TrackerProps {
@@ -108,7 +108,7 @@ export function LessonCompletionTracker({ moduleId }: TrackerProps) {
 
     const specialBadges = checkSpecialBadges({
       modulesCompleted: completedIds.length,
-      totalModules: ALL_MODULES.length,
+      totalModules: TOTAL_MODULE_COUNT,
       streak: currentStreak,
       isFirstLesson: isFirst,
       isEarlyMorning,

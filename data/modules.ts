@@ -1517,6 +1517,9 @@ export const ALL_MODULES: Module[] = [
   advancedPromptEngineering,
 ]
 
+/** Total count for client-side consumption (avoids pulling entire module data into client bundles) */
+export const TOTAL_MODULE_COUNT = ALL_MODULES.length
+
 export const BEGINNER_MODULES = ALL_MODULES.filter((m) => m.level === "beginner")
 export const INTERMEDIATE_MODULES = ALL_MODULES.filter((m) => m.level === "intermediate")
 export const ADVANCED_MODULES = ALL_MODULES.filter((m) => m.level === "advanced")
