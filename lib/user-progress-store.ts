@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import { persist } from "zustand/middleware"
+import { persist, createJSONStorage } from "zustand/middleware"
 
 // =============================================================================
 // USER PROGRESS STORE — AI Mastery Hub
@@ -214,6 +214,20 @@ export const useUserProgressStore = create<UserProgressState>()(
     }),
     {
       name: "ai-hub-progress-storage",
+      storage: createJSONStorage(() => {
+        try {
+          const test = "__storage_test__"
+          localStorage.setItem(test, test)
+          localStorage.removeItem(test)
+          return localStorage
+        } catch {
+          return {
+            getItem: () => null,
+            setItem: () => {},
+            removeItem: () => {},
+          }
+        }
+      }),
     }
   )
 )

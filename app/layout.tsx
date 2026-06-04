@@ -5,6 +5,7 @@ import "./globals.css"
 import { siteConfig } from "@/lib/site-config"
 import { FeedbackWidget } from "@/components/feedback-widget"
 import { WaitlistPopup } from "@/components/waitlist-popup"
+import { BadgeNotification } from "@/components/badges/BadgeNotification"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({
           {children}
           <FeedbackWidget />
           <WaitlistPopup />
+          <BadgeNotification />
         </ClerkProvider>
       </body>
     </html>

@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import { persist } from "zustand/middleware"
+import { persist, createJSONStorage } from "zustand/middleware"
 import {
   TOPIC_BADGES,
   SPECIAL_BADGES,
@@ -590,6 +590,21 @@ export const useBadgeStore = create<BadgeStoreState>()(
     }),
     {
       name: "ai-hub-badge-storage",
+      storage: createJSONStorage(() => {
+        try {
+          const test = "__storage_test__"
+          localStorage.setItem(test, test)
+          localStorage.removeItem(test)
+          return localStorage
+        } catch {
+          // localStorage unavailable (private browsing, restrictions) → use in-memory fallback
+          return {
+            getItem: () => null,
+            setItem: () => {},
+            removeItem: () => {},
+          }
+        }
+      }),
     }
   )
 )
